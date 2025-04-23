@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("gambar keren.png");  
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+    color: black;
+}
+nav{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 5px;
+}
+.logo{
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo figcaption{
+    font-weight: 700;
+}
+.logo-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    background-color: rgba(255, 208, 0, 0.418);
+    border-radius: 8px;
+}
+.logo-home:hover{
+    background-color: rgba(139, 137, 137, 0.5);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    border-radius: 8px;
+    padding: 7px;
+}
+.logo-about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    padding: 7px;
+}
+.logo-about:hover{
+    background-color: rgba(139, 137, 137, 0.5);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    border-radius: 8px;
+    padding: 7px;
+}
+.logo-contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    padding: 7px;
+}
+.logo-contact:hover{
+    background-color: rgba(139, 137, 137, 0.5);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    border-radius: 8px;
+    padding: 7px;
+}
+.logo-kritik{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    padding: 7px;
+}
+.logo-kritik:hover{
+    background-color: rgba(139, 137, 137, 0.5);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    border-radius: 8px;
+    padding: 7px;
+}
+nav img{
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+}
+nav a{
+    text-decoration: none;
+    font-size: x-large;
+    padding: 10px;
+}
+nav a:hover{
+    text-decoration: none;
+    color: black;
+}
+.subjudul{
+    margin-top: 6%;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+.subjudul p{
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+}
+.garis{
+    border: 2px solid rgb(255, 255, 255);
+    margin-left: 890px;
+    margin-right: 890px;
+    margin-top: 1.4%;
+}
+.box{
+    background-color: white;
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    margin-top: 3%;
+    width: 40%;
+    margin-left: 30.7%;
+    padding: 10px;
+}
+.box h1{
+    background-color: rgb(180, 39, 39);
+    color: white;
+    padding: 13px;
+}
+.box p{
+    padding: 10px;
+    font-size: larger;
+}
+input{
+    margin-left: 10px;
+    width: 97%;
+    height: 40px;
+    margin-top: 15px;
+}
+input::placeholder{
+    font-size: larger;
+    padding: 10px;
+    text-align: justify;    
+}
+.pilih{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.layanan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-polisi{
+    border: 1px solid rgb(180, 12, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    height: 15%;
+    width: 30%;
+}
+.logo-polisi:hover{
+    transition: 0.5s ease;
+    background-color: rgb(143, 39, 39);
+    color: white;
+}
+.logo-kesehatan{
+    border: 1px solid rgb(180, 12, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    height: 15%;
+    width: 30%;
+}
+.logo-kesehatan:hover{
+    transition: 0.5s ease;
+    background-color: rgb(143, 39, 39);
+    color: white;
+}
+.logo-damkar{
+    border: 1px solid rgb(180, 12, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    height: 15%;
+    width: 30%;
+}
+.logo-damkar:hover{
+    transition: 0.5s ease;
+    background-color: rgb(143, 39, 39);
+    color: white;
+}
+figcaption{
+    padding: 10px;
+}
+.bayar{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    margin: 20px 11px 10px 11px;
+}
+.wilayah{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start ;
+}
+.kirim{
+    margin-left: 80%;
+    margin-right: 15px;
+}
+.kirim input{
+    background-color: brown;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.kirim input:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0px 2px 15px 1px rgba(0,0,0,0.50);
+    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    transition: 0.5s ease;
+}
+.footer{
+    background-color: red;
+    margin-top: 30px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+}
+.info img{
+    width: 3%;
+    height: 3%;
+}
