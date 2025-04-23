@@ -42,10 +42,9 @@ nav {
     transition: all 0.3s ease;
 }
 
-.logo-about {
+.logo-contact   {
     background-color: rgba(255, 208, 0, 0.418);
 }
-
 .logo-home:hover, .logo-about:hover, 
 .logo-contact:hover, .logo-kritik:hover {
     background-color: rgba(139, 137, 137, 0.5);
@@ -64,84 +63,120 @@ nav a {
     padding: 5px;
     color: black;
 }
-main {
-    flex: 1;
-    padding: 20px;
-    margin-top: 20px;
+.content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
+.box{
+    background-color: rgba(200, 240, 21, 0.9);
+    padding: 20px;
+    width:64%;
+    border-radius: 10px;
+    height: auto;
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+}
+
+.box p{
+    margin-top: 5px;
+}
+
+.box h3{
+    margin-top: 17px;
+}
+
+.box2{
+    background-color: rgba(255, 255, 255, 0.74);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+}
+input {
+    width: 100%;
+    height: 30.5px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input::placeholder {
+    font-size: 0.8rem;
+}
+
+.telepon{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.website{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.lokasi{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.jam{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
 .subjudul {
+    margin-top: 20px;
     text-align: center;
-    color: white;   
+    color: white;
+    font-size: 1.5rem;
 }
 
 .subjudul p {
-    padding: 10px;
-    font-weight: 300;
+    margin-top: 10px;
     color: rgb(255, 255, 255);
     font-size: 1rem;
+    font-weight: bold;
 }
 
-.subjudul h1{
-    font-size: 3rem;
-}
 .garis {
-    background-color: white;
-    border: 2px solid white;
+    border: 2px solid rgb(255, 255, 255);
     margin: 15px auto;
     width: 80%;
 }
 
-.box {
-    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    width: 90%;
-    max-width: 1000px;
-    padding: 15px;
-}
-
-.box h1 {
-    padding: 15px;
-    font-size: 1.3rem;
-    background-color: rgb(197, 43, 43);
-    color: white;
-    border-radius: 5px;
-}
-
-.isi {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.isi p {
-    padding: 10px;
-    text-align: justify;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.isi img {
+footer{
+    margin-top: 45px;
     width: 100%;
-    height: auto;
-    border-radius: 5px;
 }
 .footer {
     background-color: red;
-    margin-top: 30px;
     text-align: center;
     padding: 10px;
     font-weight: bold;
     color: white;
+    margin: 0;
 }
 
 .info {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 0;
+    margin: 30px 0;
     gap: 8px;
 }
 
@@ -149,6 +184,25 @@ main {
     width: 30px;
     height: 30px;
 }
+
+.kirim {
+    display: flex;
+    justify-content: flex-end;
+}   
+.kirim input{
+    background-color: brown;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.kirim input:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0px 2px 15px 1px rgba(0,0,0,0.3);
+}
+
 @media (min-width: 576px) {
     nav {
         gap: 20px;
@@ -159,22 +213,6 @@ main {
     }
     
     nav a {
-        font-size: 1.1rem;
-    }
-    
-    .subjudul {
-        font-size: 1.8rem;
-    }
-    
-    .subjudul p {
-        font-size: 1.2rem;
-    }
-    
-    .box h1 {
-        font-size: 1.5rem;
-    }
-    
-    .isi p {
         font-size: 1.1rem;
     }
 }
@@ -192,40 +230,16 @@ main {
     nav a {
         font-size: 1.2rem;
     }
-    
-    .isi {
-        flex-direction: row;
-    }
-    
-    .isi img {
-        width: 40%;
-    }
 }
 
 @media (min-width: 992px) {
     nav {
         gap: 40px;
     }
-    
-    .garis {
-        width: 60%;
-    }
-    
-    .isi p {
-        font-size: 1.2rem;
-    }
 }
 
 @media (min-width: 1200px) {
     nav {
         gap: 50px;
-    }
-    
-    .garis {
-        width: 40%;
-    }
-    
-    .box {
-        padding: 25px;
     }
 }
