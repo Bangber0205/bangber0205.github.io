@@ -1,253 +1,290 @@
-*{
+:root {
+    --primary-color: rgb(180, 39, 39);
+    --secondary-color: rgba(255, 208, 0, 0.418);
+    --hover-color: rgba(139, 137, 137, 0.5);
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("gambar keren.png");  
     background-repeat: no-repeat;
     background-size: cover;
-}
-a{
-    color: black;
-}
-nav{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding: 5px;
-}
-.logo{
-    gap: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo figcaption{
-    font-weight: 700;
-}
-.logo-home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-    background-color: rgba(255, 208, 0, 0.418);
-    border-radius: 8px;
-}
-.logo-home:hover{
-    background-color: rgba(139, 137, 137, 0.5);
-    transform: scale(1.05);
-    transition: 0.3s ease;
-    border-radius: 8px;
-    padding: 7px;
-}
-.logo-about{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-    padding: 7px;
-}
-.logo-about:hover{
-    background-color: rgba(139, 137, 137, 0.5);
-    transform: scale(1.05);
-    transition: 0.3s ease;
-    border-radius: 8px;
-    padding: 7px;
-}
-.logo-contact{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-    padding: 7px;
-}
-.logo-contact:hover{
-    background-color: rgba(139, 137, 137, 0.5);
-    transform: scale(1.05);
-    transition: 0.3s ease;
-    border-radius: 8px;
-    padding: 7px;
-}
-.logo-kritik{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-    padding: 7px;
-}
-.logo-kritik:hover{
-    background-color: rgba(139, 137, 137, 0.5);
-    transform: scale(1.05);
-    transition: 0.3s ease;
-    border-radius: 8px;
-    padding: 7px;
-}
-nav img{
-    width: 60px;
-    height: 60px;
-    padding: 8px;
-}
-nav a{
-    text-decoration: none;
-    font-size: x-large;
-    padding: 10px;
-}
-nav a:hover{
-    text-decoration: none;
-    color: black;
-}
-.subjudul{
-    margin-top: 6%;
-    text-align: center;
-    color: white;
-    font-size: x-large;
-}
-.subjudul p{
-    margin-top: 10px;
-    color: rgb(255, 255, 255);
-}
-.garis{
-    border: 2px solid rgb(255, 255, 255);
-    margin-left: 890px;
-    margin-right: 890px;
-    margin-top: 1.4%;
-}
-.box{
-    background-color: white;
-    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    margin-top: 3%;
-    width: 40%;
-    margin-left: 30.7%;
-    padding: 10px;
-}
-.box h1{
-    background-color: rgb(180, 39, 39);
-    color: white;
-    padding: 13px;
-}
-.box p{
-    padding: 10px;
-    font-size: larger;
-}
-input{
-    margin-left: 10px;
-    width: 97%;
-    height: 40px;
-    margin-top: 15px;
-}
-input::placeholder{
-    font-size: larger;
-    padding: 10px;
-    text-align: justify;    
-}
-.pilih{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.layanan{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo-polisi{
-    border: 1px solid rgb(180, 12, 12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    height: 15%;
-    width: 30%;
-}
-.logo-polisi:hover{
-    transition: 0.5s ease;
-    background-color: rgb(143, 39, 39);
-    color: white;
-}
-.logo-kesehatan{
-    border: 1px solid rgb(180, 12, 12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    height: 15%;
-    width: 30%;
-}
-.logo-kesehatan:hover{
-    transition: 0.5s ease;
-    background-color: rgb(143, 39, 39);
-    color: white;
-}
-.logo-damkar{
-    border: 1px solid rgb(180, 12, 12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    height: 15%;
-    width: 30%;
-}
-.logo-damkar:hover{
-    transition: 0.5s ease;
-    background-color: rgb(143, 39, 39);
-    color: white;
-}
-figcaption{
-    padding: 10px;
-}
-.bayar{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    margin: 20px 11px 10px 11px;
 }
-.wilayah{
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+}
+
+.logo {
     display: flex;
     align-items: center;
-    justify-content: flex-start ;
+    gap: 5px;
 }
-.kirim{
-    margin-left: 80%;
-    margin-right: 15px;
+
+.logo figcaption {
+    font-weight: 700;
+    font-size: 1rem;
 }
-.kirim input{
+
+.logo-home, .logo-about, .logo-contact, .logo-kritik {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo-home {
+    background-color: var(--secondary-color);
+}
+
+.logo-home:hover, .logo-about:hover, 
+.logo-contact:hover, .logo-kritik:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+nav img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px;
+    color: black;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.subjudul {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.subjudul p {
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+
+.garis {
+    border: 2px solid rgb(255, 255, 255);
+    margin: 15px auto;
+    width: 80%;
+}
+
+.box {
+    background-color: white;
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.box h1 {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+input {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    font-size: 1rem;
+}
+
+.pilih, .wilayah {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.layanan {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.logo-polisi, .logo-kesehatan, .logo-damkar {
+    border: 1px solid rgb(180, 12, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    flex: 1;
+    min-width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.logo-polisi:hover, .logo-kesehatan:hover, .logo-damkar:hover {
+    background-color: rgb(143, 39, 39);
+    color: white;
+}
+
+.bayar {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+}   
+.bayar figcaption{
+    padding: 5px;
+}
+.file{
+    border: none;
+
+}
+.kirim {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.kirim input {
     background-color: brown;
     border: none;
     color: white;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.kirim input:hover{
+
+.kirim input:hover {
     background-color: white;
     color: black;
-    box-shadow: 0px 2px 15px 1px rgba(0,0,0,0.50);
-    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.75);
-    transition: 0.5s ease;
+    box-shadow: 0px 2px 15px 1px rgba(0,0,0,0.3);
 }
-.footer{
+.footer {
     background-color: red;
-    margin-top: 30px;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     font-weight: bold;
     color: white;
+    margin-top: auto;
 }
-.info{
+
+.info {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin: 15px 0;
     gap: 8px;
 }
-.info img{
-    width: 3%;
-    height: 3%;
+
+.info img {
+    width: 30px;
+    height: 30px;
+}
+@media (min-width: 576px) {
+    nav {
+        gap: 20px;
+    }
+    
+    .logo figcaption {
+        font-size: 1.2rem;
+    }
+    
+    nav a {
+        font-size: 1.1rem;
+    }
+    
+    .subjudul {
+        font-size: 1.8rem;
+    }
+    
+    .subjudul p {
+        font-size: 1.2rem;
+    }
+    
+    .box h1 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        gap: 30px;
+        padding: 15px;
+    }
+    
+    .logo figcaption {
+        font-size: 1.3rem;
+    }
+    
+    nav a {
+        font-size: 1.2rem;
+    }
+    
+    .box {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    nav {
+        gap: 40px;
+    }
+    
+    .subjudul {
+        margin-top: 40px;
+    }
+    
+    .garis {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    nav {
+        gap: 50px;
+    }
+    
+    .subjudul {
+        margin-top: 60px;
+    }
+    
+    .garis {
+        width: 40%;
+    }
 }
