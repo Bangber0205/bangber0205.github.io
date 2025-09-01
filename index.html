@@ -1,77 +1,54 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EWS Megathrust - Pesisir Cilacap</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>EWS - Megathrust Pesisir Cilacap</title>
   <link rel="stylesheet" href="assets/style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-            <path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="12" cy="12" r="1.6" fill="#fff"/>
-          </svg>
+        <nav>
+            <div class="brand">
+              <div class="logo" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="#fff"/></svg>
+              </div>
+              <div class="teks">
+                <h1>Early Warning System Megathrust</h1>
+                <figcaption>Pesisir Cilacap</figcaption>
+              </div>
+              </div>
+            <div> 
+            <div class="nav">
+              <button class="started"><a href="info.html">Get Started</a></button>
+              <button class="visit">Visit our Social Media</button>
+              <p>|</p>
+              <i data-feather="github"></i>
+              <i data-feather="facebook"></i>
+              <i data-feather="twitter"></i>
+            </div>
+        </nav>
+    <main>
+        <div class="content">
+          <h1>PESISIR CILACAP</h1>
+          <p>Pesisir Cilacap merupakan daerah yang sangat berdekatan dengan zona subduksi pertemuan 3 lempang yaitu <i>Lempeng Eurasia</i>, <i>Lempeng Indo-Australia</i>, dan <i>Lempeng Fiipina</i>. Kondisi ini menimbulkan adanya ancaman akan terdampak akibat dari benturan tektonik dalam skala yang kuat. Dengan adanya ancaman inilah maka perlu adanya kewaspadaan serta mitigasi yang cepat dan tepat dari masyarakat</p>
         </div>
-        <div class="teks-logo">
-          <p>Early Warning System</p>
-          <figcaption>Pesisir Cilacap</figcaption>
+        <div class="gambar-content">
+            <h1>Gambar Pesisir Cilacap</h1>
         </div>
-      </div>
-      <button class="btn-start"><a href="info.html">Start Here</a></button>
-    </nav>
-  </header>
-
-  <main>
-    <div class="info animate-fade">
-      <h1 id="typing"></h1>
-      <p>
-        Megathrust adalah gempa bumi besar yang terjadi di zona subduksi, yaitu daerah di mana dua lempeng tektonik bertabrakan. 
-        Lempeng samudra yang lebih padat biasanya menyusup ke bawah lempeng benua. 
-        Ketika energi ini dilepaskan, maka terjadilah gempa bumi megathrust yang berpotensi tsunami.
-      </p>
-    </div>
-  </main>
-  <aside>
-     <div class="info animate-fade">
-      <h1 id="typing"></h1>
-      <p>
-        Megathrust adalah gempa bumi besar yang terjadi di zona subduksi, yaitu daerah di mana dua lempeng tektonik bertabrakan. 
-        Lempeng samudra yang lebih padat biasanya menyusup ke bawah lempeng benua. 
-        Ketika energi ini dilepaskan, maka terjadilah gempa bumi megathrust yang berpotensi tsunami.
-      </p>
-    </div> <div class="info animate-fade">
-      <h1 id="typing"></h1>
-      <p>
-        Megathrust adalah gempa bumi besar yang terjadi di zona subduksi, yaitu daerah di mana dua lempeng tektonik bertabrakan. 
-        Lempeng samudra yang lebih padat biasanya menyusup ke bawah lempeng benua. 
-        Ketika energi ini dilepaskan, maka terjadilah gempa bumi megathrust yang berpotensi tsunami.
-      </p>
-    </div>
-  </aside>
-  <footer>
-    <p>© 2025 EWS Pride. All Rights Reserved.</p>
-  </footer>
-
-  <script>
-    // Animasi typewriter untuk judul
-    const text = "Megathrust";
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 120);
-      }
-    }
-    window.onload = typeWriter;
-  </script>
+    </main>
+    <footer>
+        <div class="info-footer">
+            <p>Made with : Visual Studio Code</p> |
+            <br>
+            <span>Supported by : Leaflet.js</span>
+        </div>
+        <div class="watermark">
+          <p>&copy;2025 EWS Pride. All Right Reserved.</p>
+        </div>
+    </footer>
+    <script>
+      feather.replace();
+    </script>
 </body>
 </html>

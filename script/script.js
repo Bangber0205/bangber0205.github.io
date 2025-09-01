@@ -43,7 +43,7 @@
   const zonaAman = L.circle([-7.690,109.020], {
     radius: 2500,
     color:'green', 
-    weight:1, 
+    weight:1,
     fillColor:'green', 
     fillOpacity:0.25}).
     addTo(map);
