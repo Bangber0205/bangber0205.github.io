@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EWS Megathrust – Pesisir Cilacap</title>
+  <meta name="description" content="Sistem Peringatan Dini (Early Warning System) bencana megathrust & tsunami untuk wilayah pesisir Cilacap, Jawa Tengah.">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://{s}.tile.openstreetmap.org" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="assets/style2.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="#fff"/></svg>
+        </div>
+        <div>
+          <div class="title">EWS Megathrust - Pesisir Cilacap</div>
+          <div class="subtitle">Simulasi & prototipe siap-integrasi (BMKG/USGS/INAWARE)</div>
+        </div>
+      </div>
+      <div class="chip" id="statusChip">Status: NORMAL</div>
+    </header>
+
+    <div class="grid">
+      <section class="panel">
+        <h3>Peta Risiko & Rute Evakuasi</h3>
+        <div class="muted">Fokus: pesisir Kabupaten Cilacap (Pantai Teluk Penyu, Pelabuhan Seleko, Sentolo Kawat, dsb). Zona rendah (≤10 m) ditandai sebagai prioritas evakuasi.</div>
+        <div id="map" role="img" aria-label="Peta evakuasi tsunami Cilacap"></div>
+        <div class="controls">
+          <div class="field"><label>Bahasa</label>
+            <select id="lang">
+              <option value="id" selected>Bahasa</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+          <div class="field"><label>Ambang Waspada</label><input id="thElev" type="number" min="0" max="100" value="60" disabled></div>
+          <div class="field"><label>Ambang Peringatan</label><input id="thWarn" type="number" min="0" max="100" value="80" disabled></div>
+          <div class="field"><label>Notifikasi</label>
+            <button class="btn-ghost" id="btnNotif">Aktifkan</button>
+          </div>
+          <button id="btnDrill">Uji Sirine (Drill)</button>
+          <a href="live-location.html" style="text-decoration:none">
+            <button style="background:linear-gradient(180deg,#10b981,#059669);margin-left:5px">
+              Arahkan ke Evakuasi (Live)
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3>Ringkasan Risiko</h3>
+        <div class="statusbar">
+          <div id="statusPill" class="status-pill status-normal">NORMAL</div>
+          <div class="muted" id="statusReason">Tidak ada anomali signifikan.</div>
+        </div>
+        <div class="kpi">
+          <div class="card"><div class="label">Magnitudo terdeteksi (simulasi)</div><div class="value" id="kpiMag">-</div></div>
+          <div class="card"><div class="label">Kedalaman (km)</div><div class="value" id="kpiDepth">-</div></div>
+          <div class="card"><div class="label">Tide Gauge (m)</div><div class="value" id="kpiTide">-</div></div>
+          <div class="card"><div class="label">Wave/Buoy (m)</div><div class="value" id="kpiWave">-</div></div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="label" style="margin-bottom:6px">Skor Risiko (0–100)</div>
+          <div class="gauge"><span id="gaugeBar"></span></div>
+        </div>
+        <h3 style="margin-top:14px">Riwayat Peringatan</h3>
+        <div class="alerts" id="alerts"></div>
+         <h3 style="margin-top:14px">Detail Gempa</h3>
+          <div class="quake-box" id="quakeDetails">
+            <p>Menunggu data gempa...</p>
+          </div>
+        <div class="footer">Catatan: Ini prototipe. Integrasikan data real-time (BMKG ShakeMap, tide-gauge BIG, buoy, GNSS) untuk operasional. Peta rute bersifat ilustratif; verifikasi dengan BPBD/Camat setempat.</div>
+      </section>
+    </div>
+  </div>
+  <audio id="siren" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="script/script.js"></script>
+</body>
+</html>

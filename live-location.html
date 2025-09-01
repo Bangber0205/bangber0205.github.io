@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Location – Rute Evakuasi</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="assets/style3.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+    <div class="logo" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="#fff"/></svg>
+    </div>
+    </div>
+    <h2>Live Location & Rute Evakuasi</h2>
+    <a href="info.html" class="back">Kembali</a>
+  </header>
+
+  <div id="map"></div>
+
+  <div class="panel">
+    <label for="evacSelect">Pilih Titik Evakuasi:</label>
+    <select id="evacSelect"></select>
+
+    <div class="steps">
+      <h3>Langkah Mitigasi Darurat:</h3>
+      <ul>
+        <li>Segera bergerak menuju titik evakuasi terdekat atau alternatif yang aman.</li>
+        <li>Hindari area pantai, jembatan, dan bangunan tinggi yang berisiko runtuh.</li>
+        <li>Siapkan tas darurat berisi dokumen penting, obat, makanan ringan, air, senter, powerbank.</li>
+        <li>Ikuti jalur evakuasi resmi & arahan BPBD setempat.</li>
+        <li>Jika sudah aman di lokasi tinggi, tetap waspada terhadap gempa susulan.</li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+  <script src="script/live-loc.js"></script>
+</body>
+</html>
