@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 :root{
-    --Background: #0f172a;
-    --Aksen: #2563eb;
+    --Background: #330a55;
+    --Aksen: #0051ff;
     --Waspada: #f59e0b; 
     --Bahaya: #dc2626; 
     --Aman: #16a34a; 
@@ -62,50 +62,35 @@ button:hover, button a:hover{
   transform: scale(1.05);
   background-color: var(--Teks);
   color: black;
-
 }
 .started{
-  background-color: #3ba2f6;
-  box-shadow: 0 px 40px rgba(6,182,212,.35);
-}
-.started a{
-  text-decoration: none;
-  color: var(--Teks);
+  background-color: var(--Aksen);
+  box-shadow: 0 0 20px 7px rgb(17, 0, 255);
 }
 .visit{
-  background-color: #1b5870;
-  box-shadow: 0 5px 40px rgba(6, 130, 212, 0.35);
+  background-color: var(--Waspada);
+  box-shadow: 0 0 20px 2px rgb(255, 208, 0);
 }
 main{
   display: flex;
-  margin-top: 100px;
-  padding: 20px;
+  padding: 100px 100px 10px 100px;
   gap: 30px;
 }
 .content{
-  width: 50%;
+  width: 100%;
 }
 .content h1{
   font-family: "Alfa Slab One", sans-serif;
   font-size: 4rem;
   font-style: italic;
+  text-align: center;
 }
 .content p{
   padding: 20px;
-  text-align: justify;
+  text-align: center;
+  font-size: 1.2rem;
   border-radius: 0px 25px 0px 20px;
   box-shadow: 0 10px 40px rgba(96, 185, 201, 0.35);
-}
-.gambar-content{
-  width: 50%;
-  background-color: rgb(70, 70, 70);
-  box-shadow: 0 10px 40px rgba(96, 185, 201, 0.35);
-  border-radius: 20px;
-  color: rgb(128, 128, 128);
-}
-.gambar-content h1{
-  display: flex;
-  justify-content: center;
 }
 footer{
   width: 100%;
@@ -242,4 +227,29 @@ footer p{
   margin-top: 10px;
   justify-content: center;
 }
+}
+@media (max-width: 600px){
+  main {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+  .content p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+  }
 }
