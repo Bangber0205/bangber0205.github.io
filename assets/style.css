@@ -73,6 +73,8 @@ button:hover, button a:hover{
 }
 main{
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 100px 100px 10px 100px;
   gap: 30px;
 }
@@ -127,6 +129,9 @@ nav{
   align-items: center;
   justify-content: space-between;
 }
+.teks h1{
+  font-size: 1rem;
+}
 .brand {
   display:flex;
   gap:7px;
@@ -178,34 +183,24 @@ button:hover, button a:hover{
 }
 main{
   display: flex;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 20px;
   gap: 30px;
 }
 .content{
-  width: 50%;
+  width: 100%;
 }
 .content h1{
   font-family: "Alfa Slab One", sans-serif;
-  font-size: 4rem;
+  font-size: 2rem;
   font-style: italic;
 }
 .content p{
   padding: 20px;
   text-align: justify;
+  font-size: 1rem;
   border-radius: 0px 25px 0px 20px;
   box-shadow: 0 10px 40px rgba(96, 185, 201, 0.35);
-}
-.gambar-content{
-  width: 50%;
-  background-color: rgb(70, 70, 70);
-  box-shadow: 0 10px 40px rgba(96, 185, 201, 0.35);
-  border-radius: 20px;
-  color: rgb(128, 128, 128);
-}
-.gambar-content h1{
-  display: flex;
-  justify-content: center;
 }
 footer{
   width: 100%;
