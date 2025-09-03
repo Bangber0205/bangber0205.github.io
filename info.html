@@ -41,7 +41,8 @@
           </div>
           <div class="field"><label>Ambang Waspada</label><input id="thElev" type="number" min="0" max="100" value="60" disabled></div>
           <div class="field"><label>Ambang Peringatan</label><input id="thWarn" type="number" min="0" max="100" value="80" disabled></div>
-          <div class="field"><label>Notifikasi</label>
+          <div class="field">
+            <label>Notifikasi</label>
             <button class="btn-ghost" id="btnNotif">Aktifkan</button>
           </div>
           <button id="btnDrill">Uji Sirine (Drill)</button>
@@ -77,5 +78,24 @@
   <audio id="siren" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="script/script.js"></script>
+  <script>
+      if ("serviceWorker" in navigator && "PushManager" in window) {
+        navigator.serviceWorker.register("sw.js").then(reg => {
+          console.log("✅ Service Worker terdaftar:", reg);
+        });
+      
+        document.getElementById("btnNotif").addEventListener("click", async () => {
+          const permission = await Notification.requestPermission();
+          if (permission === "granted") {
+            new Notification("Notifikasi Aktif ✅", {
+              body: "Anda akan menerima peringatan darurat dari MegaLert",
+              icon: "assets/icon.png"
+            });
+          } else {
+            alert("❌ Notifikasi diblokir!");
+          }
+        });
+      }
+</script>
 </body>
 </html>

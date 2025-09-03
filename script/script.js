@@ -150,59 +150,81 @@
   setInterval(simulate, 2000)
   statusChip.onclick = ()=>{ map.fitBounds(rute.getBounds(), {padding:[30,30]}) }
 
-  // ---- Detail Gempa ----
-const quakeBox = document.getElementById('quakeDetails')
-const quakes = []
-let quakeIndex = 0
+    const quakeBox = document.getElementById('quakeDetails')
+    const quakes = []
+    let quakeIndex = 0
 
-function updateQuakeDetails(){
-  if(quakes.length === 0){
-    quakeBox.innerHTML = "<p>Menunggu data gempa...</p>"
-    return
+    function updateQuakeDetails(){
+      if(quakes.length === 0){
+        quakeBox.innerHTML = "<p>Menunggu data gempa...</p>"
+        return
+      }
+      const q = quakes[quakeIndex]
+      quakeBox.innerHTML = `
+        <p><strong>Waktu:</strong> ${q.time} WIB</p>
+        <p><strong>Magnitudo:</strong> ${q.mag}</p>
+        <p><strong>Kedalaman:</strong> ${q.depth} km</p>
+        <p><strong>Tide Gauge:</strong> ${q.tide} m</p>
+        <p><strong>Wave/Buoy:</strong> ${q.wave} m</p>
+        <p><strong>Skor Risiko:</strong> ${q.score}/100</p>
+      `
+      quakeIndex = (quakeIndex + 1) % quakes.length
+    }
+
+    function simulate(){
+      tick++
+      const mag = +( (Math.random()*2.2 + 1.2) + (Math.random()>0.94? (Math.random()*2.8+1.2):0) ).toFixed(1)
+      const depth = +(Math.random()*45 + 10).toFixed(1)
+      const tide = +(0.2 + Math.random()*1.6 + (Math.random()>0.95? Math.random()*0.5:0)).toFixed(2)
+      const wave = +(0.4 + Math.random()*2.0 + (Math.random()>0.92? Math.random()*1.1:0)).toFixed(2)
+    
+      const tideAnom = tide>1.7
+      const waveAnom = wave>2.2
+      let score = Math.min(100, Math.round( (mag*14) + (depth<20?8:0) + (tideAnom?15:0) + (waveAnom?15:0) ))
+      let level = 'normal'
+      if (score>=state.thElev) level='elevated'
+      if (score>=state.thWarn || mag>=5) level='warning'
+    
+      kMag.textContent = fmt(mag,1)
+      kDepth.textContent = fmt(depth,1)
+      kTide.textContent = fmt(tide,2)
+      kWave.textContent = fmt(wave,2)
+    
+      state.score = score
+      state.level = level
+      renderStatus()
+    
+      if (level==='warning') pushAlert('warning', `Peringatan! Skor ${score}/100. Potensi bahaya signifikan.`)
+      else if (level==='elevated' && tick%5===0) pushAlert('elevated', `Waspada. Skor ${score}/100. Tren meningkat.`)
+      
+      quakes.push({ time: nowHHMM(), mag, depth, tide, wave, score })
+      if(quakes.length > 12) quakes.shift()
+    }
+    setInterval(updateQuakeDetails, 5000)
+    function sendAlertNotification(mag, loc) {
+  if (Notification.permission === "granted") {
+    navigator.serviceWorker.ready.then(reg => {
+      reg.showNotification("⚠️ Peringatan Tsunami!", {
+        body: `Gempa ${mag}M terdeteksi di ${loc}. Segera evakuasi!`,
+        icon: "assets/icon.png",
+        vibrate: [200, 100, 200],
+        tag: "alert-tsunami"
+      });
+    });
   }
-  const q = quakes[quakeIndex]
-  quakeBox.innerHTML = `
-    <p><strong>Waktu:</strong> ${q.time} WIB</p>
-    <p><strong>Magnitudo:</strong> ${q.mag}</p>
-    <p><strong>Kedalaman:</strong> ${q.depth} km</p>
-    <p><strong>Tide Gauge:</strong> ${q.tide} m</p>
-    <p><strong>Wave/Buoy:</strong> ${q.wave} m</p>
-    <p><strong>Skor Risiko:</strong> ${q.score}/100</p>
-  `
-  quakeIndex = (quakeIndex + 1) % quakes.length
+}
+function updateStatus(riskScore, mag, loc) {
+  const statusPill = document.getElementById("statusPill");
+  if (riskScore > 80) {
+    statusPill.className = "status-pill status-warn";
+    statusPill.innerText = "WARNING";
+    sendAlertNotification(mag, loc);
+  } else if (riskScore > 60) {
+    statusPill.className = "status-pill status-elev";
+    statusPill.innerText = "ELEVATED";
+  } else {
+    statusPill.className = "status-pill status-normal";
+    statusPill.innerText = "NORMAL";
+  }
 }
 
-// modifikasi fungsi simulate sedikit agar simpan data gempa
-function simulate(){
-  tick++
-  const mag = +( (Math.random()*2.2 + 1.2) + (Math.random()>0.94? (Math.random()*2.8+1.2):0) ).toFixed(1)
-  const depth = +(Math.random()*45 + 10).toFixed(1)
-  const tide = +(0.2 + Math.random()*1.6 + (Math.random()>0.95? Math.random()*0.5:0)).toFixed(2)
-  const wave = +(0.4 + Math.random()*2.0 + (Math.random()>0.92? Math.random()*1.1:0)).toFixed(2)
-
-  const tideAnom = tide>1.7
-  const waveAnom = wave>2.2
-  let score = Math.min(100, Math.round( (mag*14) + (depth<20?8:0) + (tideAnom?15:0) + (waveAnom?15:0) ))
-  let level = 'normal'
-  if (score>=state.thElev) level='elevated'
-  if (score>=state.thWarn || mag>=5) level='warning'
-
-  kMag.textContent = fmt(mag,1)
-  kDepth.textContent = fmt(depth,1)
-  kTide.textContent = fmt(tide,2)
-  kWave.textContent = fmt(wave,2)
-
-  state.score = score
-  state.level = level
-  renderStatus()
-
-  if (level==='warning') pushAlert('warning', `Peringatan! Skor ${score}/100. Potensi bahaya signifikan.`)
-  else if (level==='elevated' && tick%5===0) pushAlert('elevated', `Waspada. Skor ${score}/100. Tren meningkat.`)
-
-  // 🔽 simpan data gempa untuk detail
-  quakes.push({ time: nowHHMM(), mag, depth, tide, wave, score })
-  if(quakes.length > 12) quakes.shift()
-}
-
-// interval update detail box
-setInterval(updateQuakeDetails, 5000)
