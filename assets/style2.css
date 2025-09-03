@@ -104,11 +104,6 @@
       grid-template-columns:1.1fr .9fr;
       gap:14px;
     }
-    @media(max-width:980px) {
-      .grid {
-        grid-template-columns:1fr;
-      }
-    }
     .panel {
       background:linear-gradient(180deg,rgba(255,255,255,.02),transparent),var(--panel);
       border:1px solid #1f2a44;
@@ -156,11 +151,6 @@
       grid-template-columns:repeat(4,1fr);
       gap:10px;
       margin-top:10px;
-    }
-    @media(max-width:720px) {
-      .kpi {
-        grid-template-columns:repeat(2,1fr);
-      }
     }
     .kpi .card {
       background:var(--panel-2);
@@ -293,56 +283,30 @@
       to { opacity:1; transform:translateY(0); }
     }
 
-    @media (max-width: 768px) {
-    header h1 {
-      font-size: 14px;
+    @media (max-width: 992px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      #map {
+        height: 300px;
+      }
+      .kpi {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
-    #map {
-      height: 50vh;
+    
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .kpi {
+        grid-template-columns: 1fr;
+      }
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
-    .controls {
-      flex-direction: column;
-      gap: 10px;
-    }
-    .controls .field,
-    .controls button,
-    .controls a button {
-      width: 100%;
-    }
-    .controls select,
-    .controls input {
-      font-size: 14px;
-      padding: 8px;
-    }
-    .controls button {
-      font-size: 15px;
-      padding: 12px;
-    }
-    .status {
-      font-size: 14px;
-    }
-  }
-    @media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .title {
-    font-size: 14px;
-  }
-  .subtitle {
-    font-size: 11px;
-  }
-  .chip {
-    align-self: flex-start;
-    font-size: 11px;
-  }
-  .kpi {
-    grid-template-columns: 1fr;
-  }
-  .kpi .value {
-    font-size: 16px;
-  }
-}
 
+   

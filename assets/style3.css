@@ -132,49 +132,34 @@ body {
       vertical-align: middle;
     }
 
+    @media (max-width: 992px) {
+      #map {
+        height: 60vh;
+      }
+      .steps {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .steps .l1, .l2, .l3, .l4, .l5 {
+        width: 100%;
+      }
+    }
 
-    @media (max-width: 768px) {
-    header h2 {
-      font-size: 14px;
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+      select {
+        width: 100%;
+      }
+      .panel label {
+        font-size: 18px;
+      }
+      .panel h3 {
+        font-size: 1.2rem;
+      }
     }
-    #map {
-      height: 50vh;
-    }
-    .panel {
-      padding: 12px;
-    }
-    label,
-    select {
-      font-size: 14px;
-      width: 100%;
-    }
-    select {
-      padding: 8px;
-    }
-    .panel h3{
-      font-size: 14px;
-    }
-    .steps{
-      line-height: 1.4;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    .steps p{
-      font-size: 14px;
-    }
-    .back {
-      padding: 6px 10px;
-      font-size: 13px;
-    }
-  }
-  @media (max-width: 600px) {
-  .steps {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .l1, .l2, .l3, .l4, .l5 {
-    width: 100%;
-  }
-}
 
+    
