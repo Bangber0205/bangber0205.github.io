@@ -137,7 +137,7 @@ footer p{
     justify-content: space-between;
   }
   .menu-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     font-size: 28px;
@@ -160,9 +160,6 @@ footer p{
 @media (max-width: 480px) {
   .content h1 {
     font-size: 1.8rem;
-  }
-  .menu-toggle{
-    display: none;
   }
   .content p {
     font-size: 0.9rem;
