@@ -14,15 +14,17 @@
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
+    <!-- NAVBAR -->
     <nav>
       <div class="nav-logo">
         <p>FRZZ - FrontEnd</p>
       </div>
       <div class="nav-link">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Projects</a>
-        <a href="">Skills</a>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#device">Device</a>
         <a href="">Education</a>
         <a href="">Achievement</a>
         <a href="">Contact</a>
@@ -31,6 +33,7 @@
         <a href="">Visit Me</a>
       </div>
     </nav>
+    <!-- HOME -->
     <header>
       <section class="title">
         <p>HI, I AM</p>
@@ -54,7 +57,8 @@
           <a href="">Scroll For More</a>
         </div>
       </section>
-      <section class="header-hero">
+      <!-- ABOUT -->
+      <section class="header-hero" id="about">
         <div class="hero-title">
           <div class="hero-overview">
             <p>ABOUT PAGE</p>
@@ -97,8 +101,9 @@
             </div>
             <figcaption>
               <div class="circle"></div>
-              Student's of Informatic Engineering in
-              <b>Politeknik Negeri Cilacap</b>
+              Student's of Informatic Engineering in<b
+                >Politeknik Negeri Cilacap</b
+              >
             </figcaption>
           </div>
           <div class="hero-card">
@@ -120,7 +125,8 @@
           <img src="images/myPortphoto-removebg-preview.png" alt="" />
         </div>
       </section>
-      <section class="project-container">
+      <!-- PROJECTS -->
+      <section class="project-container" id="projects">
         <div class="project-title">
           <div class="project-overview">
             <p>PROJECT PAGE</p>
@@ -339,7 +345,8 @@
           </div>
         </div>
       </section>
-      <section class="skills-container">
+      <!-- SKILLS -->
+      <section class="skills-container" id="skills">
         <div class="skills-title">
           <div class="skills-overview">
             <p>SKILLS PAGE</p>
@@ -512,20 +519,95 @@
           </div>
         </div>
       </section>
-      <section class="device-container">
+      <!-- DEVICE -->
+      <section class="device-container" id="device">
         <div class="device-title">
           <div class="device-overview">
             <p>DEVICE PAGE</p>
           </div>
-          <h1>
-            My Device <span style="color: var(--main)">Specification</span>
-          </h1>
+          <h1>Laptop <span style="color: var(--main)">Specification</span></h1>
         </div>
         <div class="device-content-container">
-          <div class="device-content-1">
+          <div class="device-content">
             <div class="device-content-image">
               <img src="images/pngwing.com.png" alt="" />
-              <img src="images/pngwing.com (1).png" alt="" />
+            </div>
+            <div class="device-content-text">
+              <div class="text">
+                <p>Brand</p>
+                <img src="images/pngwing.com (1).png" alt="" />
+              </div>
+              <div class="text">
+                <p>Type</p>
+                <span>Lenovo Ideapad 330i</span>
+              </div>
+              <div class="text">
+                <p>Processor</p>
+                <span>Intel Celeron N4000 @1.10 GHZ (2C / 2T)</span>
+              </div>
+              <div class="text">
+                <p>RAM</p>
+                <span>4GB DDR4 MT/s 2400MHZ</span>
+              </div>
+              <div class="text">
+                <p>Storage</p>
+                <span>SSD Sata 2.5 256GB</span>
+              </div>
+              <div class="text">
+                <p></p>
+                <span>HDD 500GB</span>
+              </div>
+              <div class="text">
+                <p>Operating Systems</p>
+                <span>Windows 10 Home Single Language</span>
+              </div>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="device-content-footer">
+              <div class="device-content-title">
+                <img src="images/keyboard.png" alt="" />
+                <h2>Keyboard</h2>
+              </div>
+              <div class="device-content-main">
+                <img src="images/nyk.png" alt="" />
+                <p>NYK Nemesis Helens MKN06 Wired 60% RGB Lights</p>
+              </div>
+            </div>
+            <div class="device-content-footer">
+              <div class="device-content-title">
+                <img src="images/mouse.png" alt="" />
+                <h2>Mouse</h2>
+              </div>
+              <div class="device-content-main">
+                <img src="images/olike.png" class="olike" />
+                <p>2.4G Wireless Optical Mouse</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- EDUCATION -->
+      <section class="education-container">
+        <div class="education-title">
+          <div class="education-overview">
+            <p>ACADEMIC JOURNEY</p>
+          </div>
+          <h1>Education & <span style="color: var(--main)">Growth</span></h1>
+        </div>
+        <div class="education-content-container">
+          <div class="education-content-1">
+            <div class="education-content-title">
+              <img src="images/graduation-hat.png" width="48px" height="48px" alt="" >
+              <p>Formal Education</p>
+            </div>
+            <div class="education-content-main">
+            </div>
+          </div>
+          <div class="education-content-2">
+            <div class="education-content-title">
+              <i data-feather="award" width="32px" height="32px" style="color: var(--main);"></i>
+              <p>Certification</p>
             </div>
           </div>
         </div>
@@ -533,12 +615,6 @@
     </header>
     <script>
       feather.replace();
-      window.addEventListener("load", () => {
-        const splash = document.getElementById("splash=screen");
-        setTimeout(() => {
-          splash.classList.add("hide");
-        }, 1500);
-      });
     </script>
   </body>
 </html>

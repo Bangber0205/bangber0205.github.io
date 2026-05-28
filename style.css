@@ -4,6 +4,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 :root {
   --main: rgb(4, 217, 255);
@@ -356,6 +357,8 @@ header {
   gap: 35px;
   padding-left: 125px;
   padding-right: 125px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   color: var(--main);
   margin-top: 25px;
 }
@@ -454,9 +457,9 @@ header {
   text-decoration: none;
   color: var(--white);
   font-weight: 700;
-  border: 1px solid var(--main);
-  padding: 7px;
-  border-radius: 5px;
+  background: var(--bg-blur);
+  padding: 7px 10px 7px 10px;
+  border-radius: 3px;
   font-size: 0.8rem;
 }
 
@@ -506,7 +509,7 @@ header {
   gap: 10px;
   padding: 15px 30px 15px 30px;
   border-radius: 8px;
-  background-color: rgba(87, 87, 87, 0.15);
+  background-color: rgba(87, 87, 87, 0.1);
 }
 .skills-content-1,
 .skills-content-2,
@@ -547,7 +550,7 @@ header {
   justify-content: center;
   flex-direction: column;
   gap: 12px;
-  background-color: rgba(82, 82, 82, 0.301);
+  background-color: rgba(82, 82, 82, 0.15);
   border-radius: 5px;
   padding: 10px;
 }
@@ -645,6 +648,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
   height: 100dvh;
   color: var(--white);
   padding-left: 125px;
@@ -660,24 +664,138 @@ header {
 }
 .device-content-container {
   display: flex;
-  justify-content: space-between;
-}
-.device-content-1 {
-  display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+.device-content {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 100%;
+  background: rgba(56, 56, 56, 0.1);
+  border-radius: 10px;
 }
 .device-content-image {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  border-left: 2px solid var(--main);
+  border-radius: 10px;
 }
 .device-content-image img {
-  width: 50%;
+  width: 100%;
   height: auto;
 }
-.device-content-image img:nth-child(2) {
-  width: 20%;
+.device-content-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-left: 1px solid var(--main);
+}
+.text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text p,
+.text span {
+  font-family: "Finlandica Headline", sans-serif;
+}
+.text img {
+  width: 30%;
+  height: auto;
+}
+.device-footer {
+  display: flex;
+  gap: 10px;
+}
+.device-content-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  background: rgba(56, 56, 56, 0.1);
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 2px solid var(--main);
+}
+.device-content-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.device-content-title h2 {
+  font-family: "Finlandica Headline", sans-serif;
+}
+.device-content-title img {
+  width: 7%;
+  height: auto;
+  filter: invert(1);
+}
+.device-content-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.device-content-main p {
+  font-family: "Finlandica Headline", sans-serif;
+}
+.device-content-main img {
+  width: 35%;
+  height: auto;
+}
+
+/* EDUCATION */
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 25px;
+  height: 100dvh;
+  padding-left: 125px;
+  padding-right: 125px;
+  color: var(--white);
+}
+.education-overview p {
+  font-family: "Poppins", sans-serif;
+  color: var(--main);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 10px rgb(4, 217, 255);
+}
+.education-content-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+.education-content-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.education-content-title p {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.education-content-1,
+.education-content-2 {
+  display: flex;
+  flex-direction: column;
+}
+.education-content-1 {
+  width: 50%;
+}
+.education-content-2 {
+  width: 50%;
 }
