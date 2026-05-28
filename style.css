@@ -12,6 +12,31 @@ html {
   --bg-blur: rgb(102, 102, 102);
   --white: white;
 }
+
+/* GLASSMORPHISM SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-block: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.9),
+    rgba(0, 89, 255, 0.9)
+  );
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgb(0, 255, 255), rgb(140, 0, 255));
+}
 body {
   background: var(--bg);
 }
@@ -756,13 +781,17 @@ header {
 .education-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   height: 100dvh;
   padding-left: 125px;
   padding-right: 125px;
   color: var(--white);
+}
+.education-title p {
+  color: var(--white);
+  font-size: 0.9rem;
+  width: 85%;
 }
 .education-overview p {
   font-family: "Poppins", sans-serif;
@@ -775,27 +804,74 @@ header {
 .education-content-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
   width: 100%;
 }
 .education-content-title {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 .education-content-title p {
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
-.education-content-1,
-.education-content-2 {
+.education-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
-.education-content-1 {
-  width: 50%;
+.education-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 300px;
+  overflow-y: auto;
+  border-left: 1px solid var(--main);
 }
-.education-content-2 {
-  width: 50%;
+.education-main-content {
+  width: 100%;
+  padding: 15px 20px 15px 20px;
+  background: rgba(51, 51, 51, 0.2);
+}
+.education-main-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.education-main-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.education-main-title h3 {
+  font-size: 1.7rem;
+  font-family: "Finlandica Headline", sans-serif;
+  color: var(--main);
+}
+.education-main-title p {
+  font-family: "Finlandica Headline", sans-serif;
+  background: var(--bg-blur);
+  padding: 5px 12px 5px 12px;
+  border-radius: 20px;
+}
+.education-main-caption p {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.education-main-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.education-main-card p {
+  font-family: "Finlandica Headline", sans-serif;
+  font-size: 1rem;
+  border: 1px solid var(--bg-blur);
+  padding: 5px 12px 5px 12px;
+  border-radius: 20px;
+  color: var(--main);
 }
