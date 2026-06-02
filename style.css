@@ -12,6 +12,8 @@ html {
   --bg-blur: rgb(102, 102, 102);
   --white: white;
 }
+/* ANIMASI */
+
 
 /* GLASSMORPHISM SCROLLBAR */
 
@@ -1083,4 +1085,31 @@ header {
   letter-spacing: 1px;
   color: var(--main);
   text-shadow: 1px 1px 5px rgb(0, 121, 219);
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px 30px 50px;
+  margin-top: 300px;
+  background: rgba(39, 39, 39, 0.3);
+  border-top: 1px solid var(--bg-blur);
+}
+.copyright p {
+  letter-spacing: 1.4px;
+  font-size: 0.9rem;
+}
+.link {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.link a {
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  color: var(--main);
 }
