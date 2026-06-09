@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frzz - Front End Dev</title>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const prefersLight =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches;
+        const theme = savedTheme || (prefersLight ? "theme-light" : "theme-dark");
+        document.documentElement.classList.add("js", theme);
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,13 +40,18 @@
         <a href="#achievement">Achievement</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="nav-button">
-        <a href="">Visit Me</a>
+      <div class="nav-controls">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <i data-feather="moon"></i>
+        </button>
+        <div class="nav-button">
+          <a href="">Visit Me</a>
+        </div>
       </div>
     </nav>
     <!-- HOME -->
     <header>
-      <section class="title">
+      <section class="title scroll-animate" data-animation="fadeInUp">
         <p>HI, I AM</p>
         <h1>Fareza Maulana A.P</h1>
         <i
@@ -44,10 +59,10 @@
           <b>Politeknik Negeri Cilacap</b></i
         >
         <div class="card">
-          <span>Front-end Dev</span>
-          <span>UI Designer</span>
-          <span>Data Adminstrator</span>
-          <span>Network Administrator</span>
+          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.3">Front-end Dev</span>
+          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.4">UI Designer</span>
+          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.5">Data Adminstrator</span>
+          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.6">Network Administrator</span>
         </div>
         <div class="button">
           <a href="">Hire Me</a>
@@ -60,7 +75,7 @@
       </section>
       <!-- ABOUT -->
       <section class="header-hero" id="about">
-        <div class="hero-title">
+        <div class="hero-title scroll-animate" data-animation="fadeInLeft">
           <div class="hero-overview">
             <p>ABOUT PAGE</p>
           </div>
@@ -122,13 +137,13 @@
             </div>
           </div>
         </div>
-        <div class="hero-image">
+        <div class="hero-image scroll-animate" data-animation="fadeInRight">
           <img src="images/myPortphoto-removebg-preview.png" alt="" />
         </div>
       </section>
       <!-- PROJECTS -->
       <section class="project-container" id="projects">
-        <div class="project-title">
+        <div class="project-title scroll-animate" data-animation="fadeInDown">
           <div class="project-overview">
             <p>PROJECT PAGE</p>
           </div>
@@ -146,7 +161,7 @@
           <p>Network Configuration</p>
         </div>
         <div class="project-main-container">
-          <div class="project-main-content">
+          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0">
             <div class="project-image">
               <img src="images/" alt="" />
             </div>
@@ -179,7 +194,7 @@
               </div>
             </div>
           </div>
-          <div class="project-main-content">
+          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.15">
             <div class="project-image">
               <img src="images/" alt="" />
             </div>
@@ -212,7 +227,7 @@
               </div>
             </div>
           </div>
-          <div class="project-main-content">
+          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.3">
             <div class="project-image">
               <img src="images/" alt="" />
             </div>
@@ -245,7 +260,7 @@
               </div>
             </div>
           </div>
-          <div class="project-main-content">
+          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.45">
             <div class="project-image">
               <img src="images/" alt="" />
             </div>
@@ -278,7 +293,7 @@
               </div>
             </div>
           </div>
-          <div class="project-main-content">
+          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.6">
             <div class="project-image">
               <img src="images/" alt="" />
             </div>
@@ -311,7 +326,7 @@
               </div>
             </div>
           </div>
-          <div class="project-main-content">
+          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.75">
             <div class="project-image">
               <img src="images/" alt="" />
             </div>
@@ -348,7 +363,7 @@
       </section>
       <!-- SKILLS -->
       <section class="skills-container" id="skills">
-        <div class="skills-title">
+        <div class="skills-title scroll-animate" data-animation="fadeInDown">
           <div class="skills-overview">
             <p>SKILLS PAGE</p>
           </div>
@@ -362,13 +377,13 @@
           </p>
         </div>
         <div class="skills-content-container">
-          <div class="skills-content-1">
+          <div class="skills-content-1 scroll-animate" data-animation="fadeInUp" data-stagger="0">
             <div class="skills-content-title">
               <i data-feather="codesandbox"></i>
               <h2>Frontend Development</h2>
             </div>
             <div class="skills-card-container">
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.05">
                 <div class="skills-card-text">
                   <p>HTML</p>
                   <p>95%</p>
@@ -377,7 +392,7 @@
                   <div class="progress"></div>
                 </div>
               </div>
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.1">
                 <div class="skills-card-text">
                   <p>CSS</p>
                   <p>80%</p>
@@ -386,7 +401,7 @@
                   <div class="progress"></div>
                 </div>
               </div>
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.15">
                 <div class="skills-card-text">
                   <p>JavaScript</p>
                   <p>75%</p>
@@ -395,7 +410,7 @@
                   <div class="progress"></div>
                 </div>
               </div>
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.2">
                 <div class="skills-card-text">
                   <p>PHP Native</p>
                   <p>85%</p>
@@ -404,7 +419,7 @@
                   <div class="progress"></div>
                 </div>
               </div>
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.25">
                 <div class="skills-card-text">
                   <p>.NET C#</p>
                   <p>50%</p>
@@ -413,7 +428,7 @@
                   <div class="progress"></div>
                 </div>
               </div>
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.3">
                 <div class="skills-card-text">
                   <p>Bootstrap CSS</p>
                   <p>50%</p>
@@ -422,7 +437,7 @@
                   <div class="progress"></div>
                 </div>
               </div>
-              <div class="skills-card-content">
+              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.35">
                 <div class="skills-card-text">
                   <p>Tailwind CSS</p>
                   <p>50%</p>
@@ -433,7 +448,7 @@
               </div>
             </div>
           </div>
-          <div class="skills-content-2">
+          <div class="skills-content-2 scroll-animate" data-animation="fadeInUp" data-stagger="0.1">
             <div class="skills-content-title">
               <i data-feather="tool"></i>
               <h2>Tools</h2>
@@ -468,7 +483,7 @@
               </div>
             </div>
           </div>
-          <div class="skills-content-3">
+          <div class="skills-content-3 scroll-animate" data-animation="fadeInUp" data-stagger="0.2">
             <div class="skills-content-title">
               <i data-feather="settings"></i>
               <h2>Backend Systems</h2>
@@ -488,7 +503,7 @@
               </div>
             </div>
           </div>
-          <div class="skills-content-4">
+          <div class="skills-content-4 scroll-animate" data-animation="fadeInUp" data-stagger="0.3">
             <div class="skills-content-title">
               <i data-feather="cpu"></i>
               <h2>Methodologies</h2>
@@ -522,14 +537,14 @@
       </section>
       <!-- DEVICE -->
       <section class="device-container" id="device">
-        <div class="device-title">
+        <div class="device-title scroll-animate" data-animation="fadeInDown">
           <div class="device-overview">
             <p>DEVICE PAGE</p>
           </div>
           <h1>Laptop <span style="color: var(--main)">Specification</span></h1>
         </div>
         <div class="device-content-container">
-          <div class="device-content">
+          <div class="device-content scroll-animate" data-animation="fadeInLeft">
             <div class="device-content-image">
               <img src="images/pngwing.com.png" alt="" />
             </div>
@@ -565,7 +580,7 @@
             </div>
           </div>
           <div class="device-footer">
-            <div class="device-content-footer">
+            <div class="device-content-footer scroll-animate" data-animation="fadeInLeft" data-stagger="0.1">
               <div class="device-content-title">
                 <img src="images/keyboard.png" alt="" />
                 <h2>Keyboard</h2>
@@ -575,7 +590,7 @@
                 <p>NYK Nemesis Helens MKN06 Wired 60% RGB Lights</p>
               </div>
             </div>
-            <div class="device-content-footer">
+            <div class="device-content-footer scroll-animate" data-animation="fadeInRight" data-stagger="0.2">
               <div class="device-content-title">
                 <img src="images/mouse.png" alt="" />
                 <h2>Mouse</h2>
@@ -590,7 +605,7 @@
       </section>
       <!-- EDUCATION -->
       <section class="education-container" id="education">
-        <div class="education-title">
+        <div class="education-title scroll-animate" data-animation="fadeInDown">
           <div class="education-overview">
             <p>ACADEMIC JOURNEY</p>
           </div>
@@ -613,7 +628,7 @@
               <p>Formal Education</p>
             </div>
             <div class="education-main-container">
-              <div class="education-main-content">
+              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0">
                 <div class="education-main-text">
                   <div class="education-main-title">
                     <h3>Politeknik Negeri Cilacap</h3>
@@ -628,7 +643,7 @@
                   </div>
                 </div>
               </div>
-              <div class="education-main-content">
+              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0.15">
                 <div class="education-main-text">
                   <div class="education-main-title">
                     <h3>SMA Negeri 1 Cilacap</h3>
@@ -643,7 +658,7 @@
                   </div>
                 </div>
               </div>
-              <div class="education-main-content">
+              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0.3">
                 <div class="education-main-text">
                   <div class="education-main-title">
                     <h3>SMP Negeri 1 Cilacap</h3>
@@ -658,7 +673,7 @@
                   </div>
                 </div>
               </div>
-              <div class="education-main-content">
+              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0.45">
                 <div class="education-main-text">
                   <div class="education-main-title">
                     <h3>SD Al-Irsyad 01 Cilacap</h3>
@@ -679,7 +694,7 @@
       </section>
       <!-- CERTIFICATION -->
       <section class="certification-container" id="achievement">
-        <div class="certification-title">
+        <div class="certification-title scroll-animate" data-animation="fadeInDown">
           <div class="certification-overview">
             <p>CAREER JOURNEY</p>
           </div>
@@ -696,7 +711,7 @@
           <p>Technical Certification</p>
         </div>
         <div class="certification-card-container">
-          <div class="certification-card">
+          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0">
             <i
               data-feather="award"
               color="rgb(4, 217, 255)"
@@ -720,7 +735,7 @@
               <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
             </div>
           </div>
-          <div class="certification-card">
+          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.1">
             <i
               data-feather="award"
               color="rgb(4, 217, 255)"
@@ -744,7 +759,7 @@
               <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
             </div>
           </div>
-          <div class="certification-card">
+          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.2">
             <i
               data-feather="award"
               color="rgb(4, 217, 255)"
@@ -768,7 +783,7 @@
               <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
             </div>
           </div>
-          <div class="certification-card">
+          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.3">
             <i
               data-feather="award"
               color="rgb(4, 217, 255)"
@@ -792,7 +807,7 @@
               <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
             </div>
           </div>
-          <div class="certification-card">
+          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.4">
             <i
               data-feather="award"
               color="rgb(4, 217, 255)"
@@ -816,7 +831,7 @@
               <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
             </div>
           </div>
-          <div class="certification-card">
+          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.5">
             <i
               data-feather="award"
               color="rgb(4, 217, 255)"
@@ -844,7 +859,7 @@
       </section>
       <!-- CONTACT -->
       <section class="contact-container" id="contact">
-        <div class="contact-title">
+        <div class="contact-title scroll-animate" data-animation="fadeInDown">
           <h1>
             Let's Get in Touch <span style="color: var(--main)">with Me</span>
           </h1>
@@ -854,7 +869,7 @@
           </p>
         </div>
         <div class="contact-content-container">
-          <div class="contact-content">
+          <div class="contact-content scroll-animate" data-animation="fadeInLeft">
             <p>Send a Message</p>
             <div class="contact-input-container">
               <div class="contact-input">
@@ -874,7 +889,7 @@
               <a href="">Send Message</a>
             </div>
           </div>
-          <div class="contact-hero">
+          <div class="contact-hero scroll-animate" data-animation="fadeInRight">
             <div class="contact-hero-content">
               <div class="contact-hero-title">
                 <div class="circle"></div>
@@ -911,7 +926,7 @@
                 height: 150px;
                 display: flex;
                 justify-content: end;
-                background: url(&quot;images/computer-program-coding-screen.jpg&quot;);
+                background: url('images/computer-program-coding-screen.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 padding: 15px !important;
@@ -938,7 +953,7 @@
           </div>
         </div>
       </section>
-      <section class="footer" style="color: var(--white)">
+      <section class="footer scroll-animate" data-animation="fadeInUp" style="color: var(--white)">
         <div class="copyright">
           <p>&copy; 2026 PORTFOLIO FAREZA, BUILT WITH PRECISION</p>
         </div>

@@ -9,8 +9,27 @@ html {
 :root {
   --main: rgb(4, 217, 255);
   --bg: rgb(7, 7, 7);
-  --bg-blur: rgb(102, 102, 102);
+  --bg-soft: rgb(18, 18, 18);
+  --bg-panel: rgba(39, 39, 39, 0.144);
+  --bg-blur: rgba(102, 102, 102, 0.5);
   --white: white;
+  --text: rgba(255, 255, 255, 0.92);
+  --nav-bg: rgba(7, 7, 7, 0.95);
+}
+
+html.theme-light {
+  --bg: #f6fbff;
+  --bg-soft: #ffffff;
+  --bg-panel: rgba(255, 255, 255, 0.92);
+  --bg-blur: rgba(8, 18, 28, 0.2);
+  --white: #0f1720;
+  --text: #0f1720;
+  --nav-bg: rgba(246, 251, 255, 0.95);
+  color-scheme: light;
+}
+
+html.theme-dark {
+  color-scheme: dark;
 }
 /* ANIMASI */
 
@@ -147,9 +166,22 @@ html {
 }
 
 /* Scroll Animate Base State - Invisible before scroll */
-.scroll-animate {
+html.js .scroll-animate {
   opacity: 0;
   visibility: hidden;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+  transition:
+    opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+    visibility 0.6s linear;
+  backface-visibility: hidden;
+}
+
+html.js .scroll-animate.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0) scale(1);
 }
 
 /* Animation Classes */
@@ -263,6 +295,9 @@ html {
 }
 body {
   background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* NAVBAR */
@@ -272,15 +307,42 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 35px 25px 35px;
-  transition: transform 0.3s ease;
+  padding: 25px 35px;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(7, 7, 7, 0.95);
+  background: var(--nav-bg, rgba(7, 7, 7, 0.95));
   backdrop-filter: blur(10px);
   flex-wrap: nowrap;
-  overflow: hidden;
+  border-bottom: 1px solid var(--bg-blur);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--main);
+  color: var(--main);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--main);
+  color: var(--bg);
+  transform: scale(1.1);
 }
 
 /* Hamburger Menu */
@@ -389,6 +451,7 @@ nav {
   text-shadow: 0px 0px 5px rgb(3, 135, 187);
   position: relative;
   display: inline-block;
+  padding: 8px 4px;
 }
 .nav-link a:hover {
   text-shadow: 0px 0px 10px rgb(3, 135, 187);
@@ -518,12 +581,15 @@ header {
 .button a {
   text-decoration: none;
   border-radius: 3px;
-  padding: 8px;
+  padding: 12px 8px;
   font-weight: 600;
-  font-size: clamp(0.65rem, 1.6vw, 0.9rem);
-  width: clamp(70px, 18vw, 100px);
+  font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+  min-width: 110px;
   text-align: center;
   box-shadow: 0px 0px 10px 0px var(--main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .button a:nth-child(1) {
   background-color: var(--main);
@@ -1603,6 +1669,7 @@ body {
 @media (max-width: 1024px) {
   nav {
     padding: 15px 20px;
+    gap: 16px;
   }
 
   .nav-logo p {
@@ -1612,6 +1679,8 @@ body {
   .nav-link {
     gap: 12px;
     font-size: 0.85rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-link a {
@@ -1660,6 +1729,7 @@ body {
     padding-left: 60px;
     padding-right: 60px;
     flex-wrap: wrap;
+    height: auto;
   }
 
   .hero-title {
@@ -1692,7 +1762,7 @@ body {
 
   .project-main-content {
     width: 100%;
-    max-width: 320px;
+    max-width: none;
   }
 
   .project-image {
@@ -1844,8 +1914,8 @@ body {
   }
 
   .title h1 {
-    font-size: 1.15rem;
-    margin-top: 6px;
+    font-size: 1.75rem;
+    margin-top: 8px;
   }
 
   .title p {
@@ -2550,6 +2620,11 @@ body {
 
 /* Small Mobile (320px - 480px) */
 @media (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   nav {
     padding: 10px 12px;
   }
@@ -2652,3 +2727,15 @@ body {
     height: auto;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
