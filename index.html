@@ -1,973 +1,505 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frzz - Front End Dev</title>
-    <script>
-      (function () {
-        const savedTheme = localStorage.getItem("portfolio-theme");
-        const prefersLight =
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: light)").matches;
-        const theme = savedTheme || (prefersLight ? "theme-light" : "theme-dark");
-        document.documentElement.classList.add("js", theme);
-      })();
-    </script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="images/logoBR.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Finlandica+Headline:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/feather-icons"></script>
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav>
-      <div class="nav-logo">
-        <p>FRZZ - FrontEnd</p>
-      </div>
-      <div class="nav-link">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#device">Device</a>
-        <a href="#education">Education</a>
-        <a href="#achievement">Achievement</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="nav-controls">
-        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fareza Maulana | Front-End Developer</title>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('portfolio-theme');
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/feather-icons" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-in">
+      <a href="#" class="nav-logo">
+        <span class="logo-br">&lt;</span>
+        <span class="logo-tx">FRZZ</span>
+        <span class="logo-br"> /&gt;</span>
+      </a>
+      <ul class="nav-lk">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievement">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-act">
+        <button class="theme-tg" aria-label="Toggle theme">
           <i data-feather="moon"></i>
         </button>
-        <div class="nav-button">
-          <a href="">Visit Me</a>
-        </div>
+        <a href="#" class="nav-cta">Visit Me</a>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
-    <!-- HOME -->
-    <header>
-      <section class="title scroll-animate" data-animation="fadeInUp">
-        <p>HI, I AM</p>
-        <h1>Fareza Maulana A.P</h1>
-        <i
-          >Informatic Engineering Student's of
-          <b>Politeknik Negeri Cilacap</b></i
-        >
-        <div class="card">
-          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.3">Front-end Dev</span>
-          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.4">UI Designer</span>
-          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.5">Data Adminstrator</span>
-          <span class="scroll-animate" data-animation="scaleIn" data-stagger="0.6">Network Administrator</span>
-        </div>
-        <div class="button">
-          <a href="">Hire Me</a>
-          <a href="">View CV</a>
-        </div>
-        <div class="scroll">
-          <i data-feather="chevrons-down" color="white"></i>
-          <a href="">Scroll For More</a>
-        </div>
-      </section>
-      <!-- ABOUT -->
-      <section class="header-hero" id="about">
-        <div class="hero-title scroll-animate" data-animation="fadeInLeft">
-          <div class="hero-overview">
-            <p>ABOUT PAGE</p>
-          </div>
-          <h1>About Me</h1>
-          <figcaption>
-            A highly motivated Informatic Engineering student with a passion for
+    </div>
+  </nav>
+
+  <div class="mob-overlay" id="mobOverlay">
+    <div class="mob-overlay-inner">
+      <ul class="mob-lk">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievement">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="mob-cta">Visit Me</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="home" class="sec hero">
+    <div class="container hero-in">
+      <span class="hero-tag">HI, I AM</span>
+      <h1 class="hero-t">Fareza Maulana A.P</h1>
+      <p class="hero-sub">
+        Informatics Engineering Student at <strong>Politeknik Negeri Cilacap</strong>
+      </p>
+      <div class="hero-pills">
+        <span>Front-end Dev</span>
+        <span>UI Designer</span>
+        <span>Data Administrator</span>
+        <span>Network Administrator</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-p">Hire Me</a>
+        <a href="#" class="btn btn-s">View CV</a>
+      </div>
+      <div class="hero-scroll">
+        <i data-feather="chevrons-down"></i>
+        <span>Scroll For More</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>About</p>
+      </div>
+      <h2 class="sec-t">About Me</h2>
+      <div class="ab-g">
+        <div class="ab-c">
+          <p class="ab-txt">
+            A highly motivated Informatics Engineering student with a passion for
             building meticulous digital experiences. I specialize in bridging
             the gap between design and data, creating interfaces that are as
             functional as they are beautiful.
-          </figcaption>
-          <div class="card">
+          </p>
+          <div class="ab-pills">
             <span>Front-end Dev</span>
             <span>UI Designer</span>
-            <span>Data Adminstrator</span>
+            <span>Data Administrator</span>
             <span>Network Administrator</span>
           </div>
-          <div class="hero-status">
-            <div class="hero-status-title">
-              <div class="circle"></div>
-              <p>Recent Information</p>
-            </div>
-            <div class="hero-card">
-              <div class="hero-card-content">
-                <p>REGION</p>
-                <b>Cilacap, Central Java</b>
-              </div>
-              <div class="hero-card-content">
-                <p>NATIONALITY</p>
-                <b>Indonesian</b>
-              </div>
-              <div class="hero-card-content">
-                <p>AGE</p>
-                <b>20 years old</b>
-              </div>
-            </div>
-            <div class="hero-status-content">
-              <div class="circle"></div>
-              <p>Status - Active</p>
-            </div>
-            <figcaption>
-              <div class="circle"></div>
-              Student's of Informatic Engineering in<b
-                >Politeknik Negeri Cilacap</b
-              >
-            </figcaption>
+          <div class="ab-row">
+            <span class="pill-stat">
+              <span class="dot"></span>
+              Recent Information
+            </span>
           </div>
-          <div class="hero-card">
-            <div class="hero-card-content">
-              <p>GPA - CUMLAUDE</p>
-              <b class="gpa">3.72</b>
+          <div class="ab-info">
+            <div>
+              <p class="info-l">REGION</p>
+              <p class="info-v">Cilacap, Central Java</p>
             </div>
-            <div class="hero-card-content">
-              <p>WPM TYPING SPEED</p>
-              <b class="wpm">144</b>
+            <div>
+              <p class="info-l">NATIONALITY</p>
+              <p class="info-v">Indonesian</p>
             </div>
-            <div class="hero-card-content">
-              <p>PROJECT</p>
-              <b class="project">10</b>
+            <div>
+              <p class="info-l">AGE</p>
+              <p class="info-v">20 years old</p>
             </div>
           </div>
-        </div>
-        <div class="hero-image scroll-animate" data-animation="fadeInRight">
-          <img src="images/myPortphoto-removebg-preview.png" alt="" />
-        </div>
-      </section>
-      <!-- PROJECTS -->
-      <section class="project-container" id="projects">
-        <div class="project-title scroll-animate" data-animation="fadeInDown">
-          <div class="project-overview">
-            <p>PROJECT PAGE</p>
+          <div class="ab-row">
+            <span class="pill-stat">
+              <span class="dot"></span>
+              Status - Active
+            </span>
+            <p class="ab-status">
+              <span class="dot"></span>
+              Student at <strong>Politeknik Negeri Cilacap</strong>
+            </p>
           </div>
-          <h1>Featured Projects</h1>
-          <p>
-            A curated selection of technical explorations and architectural
-            designs, reflecting a commitment to clean code and user-cantric
-            problem Solving
-          </p>
-        </div>
-        <div class="project-title-card">
-          <p>Front-end/Back-end</p>
-          <p>UI Design</p>
-          <p>Database</p>
-          <p>Network Configuration</p>
-        </div>
-        <div class="project-main-container">
-          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0">
-            <div class="project-image">
-              <img src="images/" alt="" />
+          <div class="ab-counters">
+            <div>
+              <p class="cnt">3.72</p>
+              <p class="cnt-l">GPA</p>
             </div>
-            <div class="project-main-text">
-              <div class="project-main-caption">
-                <p>HTML 5</p>
-                <p>CSS 3</p>
-                <p>JavaScript</p>
-              </div>
-              <div class="project-main-title">
-                <p>Personal Portfolio</p>
-              </div>
-              <div class="project-main-p">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium tenetur ratione architecto animi?
-                </p>
-              </div>
-              <div class="project-main-button">
-                <a href=""
-                  >Github<i data-feather="github" width="18px" height="18px"></i
-                ></a>
-                <a href=""
-                  >Live Demo<i
-                    data-feather="arrow-up-right"
-                    width="18px"
-                    height="18px"
-                  ></i
-                ></a>
-              </div>
+            <div>
+              <p class="cnt">144</p>
+              <p class="cnt-l">WPM Typing</p>
             </div>
-          </div>
-          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.15">
-            <div class="project-image">
-              <img src="images/" alt="" />
-            </div>
-            <div class="project-main-text">
-              <div class="project-main-caption">
-                <p>HTML 5</p>
-                <p>CSS 3</p>
-                <p>JavaScript</p>
-              </div>
-              <div class="project-main-title">
-                <p>Early Warning System</p>
-              </div>
-              <div class="project-main-p">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium tenetur ratione architecto animi?
-                </p>
-              </div>
-              <div class="project-main-button">
-                <a href=""
-                  >Github<i data-feather="github" width="18px" height="18px"></i
-                ></a>
-                <a href=""
-                  >Live Demo<i
-                    data-feather="arrow-up-right"
-                    width="18px"
-                    height="18px"
-                  ></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.3">
-            <div class="project-image">
-              <img src="images/" alt="" />
-            </div>
-            <div class="project-main-text">
-              <div class="project-main-caption">
-                <p>HTML 5</p>
-                <p>CSS 3</p>
-                <p>PHP Native</p>
-              </div>
-              <div class="project-main-title">
-                <p>Sistem Perpustakaan</p>
-              </div>
-              <div class="project-main-p">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium tenetur ratione architecto animi?
-                </p>
-              </div>
-              <div class="project-main-button">
-                <a href=""
-                  >Github<i data-feather="github" width="18px" height="18px"></i
-                ></a>
-                <a href=""
-                  >Live Demo<i
-                    data-feather="arrow-up-right"
-                    width="18px"
-                    height="18px"
-                  ></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.45">
-            <div class="project-image">
-              <img src="images/" alt="" />
-            </div>
-            <div class="project-main-text">
-              <div class="project-main-caption">
-                <p>.NET Framework</p>
-                <p>C#</p>
-                <p>MySQL</p>
-              </div>
-              <div class="project-main-title">
-                <p>SIMAP Trans</p>
-              </div>
-              <div class="project-main-p">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium tenetur ratione architecto animi?
-                </p>
-              </div>
-              <div class="project-main-button">
-                <a href=""
-                  >Github<i data-feather="github" width="18px" height="18px"></i
-                ></a>
-                <a href=""
-                  >Live Demo<i
-                    data-feather="arrow-up-right"
-                    width="18px"
-                    height="18px"
-                  ></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.6">
-            <div class="project-image">
-              <img src="images/" alt="" />
-            </div>
-            <div class="project-main-text">
-              <div class="project-main-caption">
-                <p>HTML 5</p>
-                <p>CSS 3</p>
-                <p>JavaScript</p>
-              </div>
-              <div class="project-main-title">
-                <p>Onei Esports</p>
-              </div>
-              <div class="project-main-p">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium tenetur ratione architecto animi?
-                </p>
-              </div>
-              <div class="project-main-button">
-                <a href=""
-                  >Github<i data-feather="github" width="18px" height="18px"></i
-                ></a>
-                <a href=""
-                  >Live Demo<i
-                    data-feather="arrow-up-right"
-                    width="18px"
-                    height="18px"
-                  ></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-main-content scroll-animate" data-animation="slideInUp" data-stagger="0.75">
-            <div class="project-image">
-              <img src="images/" alt="" />
-            </div>
-            <div class="project-main-text">
-              <div class="project-main-caption">
-                <p>HTML 5</p>
-                <p>Tailwind CSS</p>
-                <p>Code Igniter 4</p>
-              </div>
-              <div class="project-main-title">
-                <p>Manajemen Warung</p>
-              </div>
-              <div class="project-main-p">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Praesentium tenetur ratione architecto animi?
-                </p>
-              </div>
-              <div class="project-main-button">
-                <a href=""
-                  >Github<i data-feather="github" width="18px" height="18px"></i
-                ></a>
-                <a href=""
-                  >Live Demo<i
-                    data-feather="arrow-up-right"
-                    width="18px"
-                    height="18px"
-                  ></i
-                ></a>
-              </div>
+            <div>
+              <p class="cnt">10</p>
+              <p class="cnt-l">Projects</p>
             </div>
           </div>
         </div>
-      </section>
-      <!-- SKILLS -->
-      <section class="skills-container" id="skills">
-        <div class="skills-title scroll-animate" data-animation="fadeInDown">
-          <div class="skills-overview">
-            <p>SKILLS PAGE</p>
+        <div class="ab-photo">
+          <div class="ab-ph-in">
+            <div class="ab-ph-g"></div>
+            <img src="images/myPortphoto-removebg-preview.png" alt="Fareza" />
           </div>
-          <h1>
-            Mastering the <span style="color: var(--main)">Digital Craft.</span>
-          </h1>
-          <p>
-            A curated selection of technologies and methodologies i've mastered
-            to build high-performance, scalable, and beautiful digital
-            experience
-          </p>
         </div>
-        <div class="skills-content-container">
-          <div class="skills-content-1 scroll-animate" data-animation="fadeInUp" data-stagger="0">
-            <div class="skills-content-title">
-              <i data-feather="codesandbox"></i>
-              <h2>Frontend Development</h2>
-            </div>
-            <div class="skills-card-container">
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.05">
-                <div class="skills-card-text">
-                  <p>HTML</p>
-                  <p>95%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.1">
-                <div class="skills-card-text">
-                  <p>CSS</p>
-                  <p>80%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.15">
-                <div class="skills-card-text">
-                  <p>JavaScript</p>
-                  <p>75%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.2">
-                <div class="skills-card-text">
-                  <p>PHP Native</p>
-                  <p>85%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.25">
-                <div class="skills-card-text">
-                  <p>.NET C#</p>
-                  <p>50%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.3">
-                <div class="skills-card-text">
-                  <p>Bootstrap CSS</p>
-                  <p>50%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-              <div class="skills-card-content scroll-animate" data-animation="fadeInUp" data-stagger="0.35">
-                <div class="skills-card-text">
-                  <p>Tailwind CSS</p>
-                  <p>50%</p>
-                </div>
-                <div class="bar-progress">
-                  <div class="progress"></div>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>Projects</p>
+      </div>
+      <h2 class="sec-t">Featured Work</h2>
+      <p class="sec-d">
+        A curated selection of technical explorations and architectural designs,
+        reflecting a commitment to clean code and user-centric problem solving.
+      </p>
+      <div class="proj-g">
+        <div class="proj-c">
+          <div class="proj-vis" style="background:linear-gradient(145deg,#0c1222,#16203a)">
+            <div class="proj-pat"></div>
+            <span class="proj-lbl">Personal Portfolio</span>
           </div>
-          <div class="skills-content-2 scroll-animate" data-animation="fadeInUp" data-stagger="0.1">
-            <div class="skills-content-title">
-              <i data-feather="tool"></i>
-              <h2>Tools</h2>
-            </div>
-            <div class="skills-card-container-2">
-              <div class="skills-card-content-2">
-                <p>VS Code</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Visual Studio</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Git / Github</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Figma</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Cisco Packet Tracer</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Winbox</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Linux</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Draw io</p>
-              </div>
-              <div class="skills-card-content-2">
-                <p>Ms. Excel</p>
-              </div>
-            </div>
-          </div>
-          <div class="skills-content-3 scroll-animate" data-animation="fadeInUp" data-stagger="0.2">
-            <div class="skills-content-title">
-              <i data-feather="settings"></i>
-              <h2>Backend Systems</h2>
-            </div>
-            <div class="skills-card-container-3">
-              <div class="skills-card-content-3">
-                <p>Laravel 11 / 12</p>
-                <span>Intermediate</span>
-              </div>
-              <div class="skills-card-content-3">
-                <p>Code Igniter 4</p>
-                <span>Intermediate</span>
-              </div>
-              <div class="skills-card-content-3">
-                <p>MySQL</p>
-                <span>Intermediate</span>
-              </div>
-            </div>
-          </div>
-          <div class="skills-content-4 scroll-animate" data-animation="fadeInUp" data-stagger="0.3">
-            <div class="skills-content-title">
-              <i data-feather="cpu"></i>
-              <h2>Methodologies</h2>
-            </div>
-            <div class="skills-card-text-4">
-              <p>
-                I prioritize maintainable code and user-centric designs,
-                following industry best practices to deliver value effectively.
-              </p>
-            </div>
-            <div class="skills-card-container-4">
-              <div class="skills-card-content-4">
-                <i data-feather="check-circle" width="18px" height="18px"></i>
-                <p>Waterfall</p>
-              </div>
-              <div class="skills-card-content-4">
-                <i data-feather="check-circle" width="18px" height="18px"></i>
-                <p>Spiral</p>
-              </div>
-              <div class="skills-card-content-4">
-                <i data-feather="check-circle" width="18px" height="18px"></i>
-                <p>Extreme Programming</p>
-              </div>
-              <div class="skills-card-content-4">
-                <i data-feather="check-circle" width="18px" height="18px"></i>
-                <p>Prototype</p>
-              </div>
+          <div class="proj-b">
+            <div class="proj-stk"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+            <h3>Personal Portfolio</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur ratione architecto animi?</p>
+            <div class="proj-acts">
+              <a href="#"><i data-feather="github" width="14" height="14"></i> GitHub</a>
+              <a href="#" class="act-lv">Live Demo <i data-feather="arrow-up-right" width="14" height="14"></i></a>
             </div>
           </div>
         </div>
-      </section>
-      <!-- DEVICE -->
-      <section class="device-container" id="device">
-        <div class="device-title scroll-animate" data-animation="fadeInDown">
-          <div class="device-overview">
-            <p>DEVICE PAGE</p>
+        <div class="proj-c">
+          <div class="proj-vis" style="background:linear-gradient(145deg,#0f2218,#0d3d28)">
+            <div class="proj-pat"></div>
+            <span class="proj-lbl">Early Warning System</span>
           </div>
-          <h1>Laptop <span style="color: var(--main)">Specification</span></h1>
-        </div>
-        <div class="device-content-container">
-          <div class="device-content scroll-animate" data-animation="fadeInLeft">
-            <div class="device-content-image">
-              <img src="images/pngwing.com.png" alt="" />
-            </div>
-            <div class="device-content-text">
-              <div class="text">
-                <p>Brand</p>
-                <img src="images/pngwing.com (1).png" alt="" />
-              </div>
-              <div class="text">
-                <p>Type</p>
-                <span>Lenovo Ideapad 330i</span>
-              </div>
-              <div class="text">
-                <p>Processor</p>
-                <span>Intel Celeron N4000 @1.10 GHZ (2C / 2T)</span>
-              </div>
-              <div class="text">
-                <p>RAM</p>
-                <span>4GB DDR4 MT/s 2400MHZ</span>
-              </div>
-              <div class="text">
-                <p>Storage</p>
-                <span>SSD Sata 2.5 256GB</span>
-              </div>
-              <div class="text">
-                <p></p>
-                <span>HDD 500GB</span>
-              </div>
-              <div class="text">
-                <p>Operating Systems</p>
-                <span>Windows 10 Home Single Language</span>
-              </div>
-            </div>
-          </div>
-          <div class="device-footer">
-            <div class="device-content-footer scroll-animate" data-animation="fadeInLeft" data-stagger="0.1">
-              <div class="device-content-title">
-                <img src="images/keyboard.png" alt="" />
-                <h2>Keyboard</h2>
-              </div>
-              <div class="device-content-main">
-                <img src="images/nyk.png" alt="" />
-                <p>NYK Nemesis Helens MKN06 Wired 60% RGB Lights</p>
-              </div>
-            </div>
-            <div class="device-content-footer scroll-animate" data-animation="fadeInRight" data-stagger="0.2">
-              <div class="device-content-title">
-                <img src="images/mouse.png" alt="" />
-                <h2>Mouse</h2>
-              </div>
-              <div class="device-content-main">
-                <img src="images/olike.png" class="olike" />
-                <p>2.4G Wireless Optical Mouse</p>
-              </div>
+          <div class="proj-b">
+            <div class="proj-stk"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+            <h3>Early Warning System</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur ratione architecto animi?</p>
+            <div class="proj-acts">
+              <a href="#"><i data-feather="github" width="14" height="14"></i> GitHub</a>
+              <a href="#" class="act-lv">Live Demo <i data-feather="arrow-up-right" width="14" height="14"></i></a>
             </div>
           </div>
         </div>
-      </section>
-      <!-- EDUCATION -->
-      <section class="education-container" id="education">
-        <div class="education-title scroll-animate" data-animation="fadeInDown">
-          <div class="education-overview">
-            <p>ACADEMIC JOURNEY</p>
+        <div class="proj-c">
+          <div class="proj-vis" style="background:linear-gradient(145deg,#1a0f26,#2d0f45)">
+            <div class="proj-pat"></div>
+            <span class="proj-lbl">Sistem Perpustakaan</span>
           </div>
-          <h1>Education & <span style="color: var(--main)">Growth</span></h1>
-          <p>
-            A chronological timeline of my formal education, specialized
-            certifications, and the continuous learning path that shapes my
-            technical foundation.
-          </p>
-        </div>
-        <div class="education-content-container">
-          <div class="education-content">
-            <div class="education-content-title">
-              <img
-                src="images/graduation-hat.png"
-                width="48px"
-                height="48px"
-                alt=""
-              />
-              <p>Formal Education</p>
-            </div>
-            <div class="education-main-container">
-              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0">
-                <div class="education-main-text">
-                  <div class="education-main-title">
-                    <h3>Politeknik Negeri Cilacap</h3>
-                    <p>2024 - Present</p>
-                  </div>
-                  <div class="education-main-caption">
-                    <p>Informatic Engineering</p>
-                  </div>
-                  <div class="education-main-card">
-                    <p>GPA : 3.72/4.00</p>
-                    <p>Frontend Developer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0.15">
-                <div class="education-main-text">
-                  <div class="education-main-title">
-                    <h3>SMA Negeri 1 Cilacap</h3>
-                    <p>2021 - 2024</p>
-                  </div>
-                  <div class="education-main-caption">
-                    <p>Social Science</p>
-                  </div>
-                  <div class="education-main-card">
-                    <p>GPA : 92.5/100</p>
-                    <p>Social Student</p>
-                  </div>
-                </div>
-              </div>
-              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0.3">
-                <div class="education-main-text">
-                  <div class="education-main-title">
-                    <h3>SMP Negeri 1 Cilacap</h3>
-                    <p>2018 - 2021</p>
-                  </div>
-                  <div class="education-main-caption">
-                    <p>Regular Class</p>
-                  </div>
-                  <div class="education-main-card">
-                    <p>GPA : 88/100</p>
-                    <p>Social & Science Major</p>
-                  </div>
-                </div>
-              </div>
-              <div class="education-main-content scroll-animate" data-animation="fadeInLeft" data-stagger="0.45">
-                <div class="education-main-text">
-                  <div class="education-main-title">
-                    <h3>SD Al-Irsyad 01 Cilacap</h3>
-                    <p>2012 - 2018</p>
-                  </div>
-                  <div class="education-main-caption">
-                    <p>Tematik Class</p>
-                  </div>
-                  <div class="education-main-card">
-                    <p>GPA : 100/100</p>
-                    <p>Tematik Student</p>
-                  </div>
-                </div>
-              </div>
+          <div class="proj-b">
+            <div class="proj-stk"><span>HTML5</span><span>CSS3</span><span>PHP Native</span></div>
+            <h3>Sistem Perpustakaan</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur ratione architecto animi?</p>
+            <div class="proj-acts">
+              <a href="#"><i data-feather="github" width="14" height="14"></i> GitHub</a>
+              <a href="#" class="act-lv">Live Demo <i data-feather="arrow-up-right" width="14" height="14"></i></a>
             </div>
           </div>
         </div>
-      </section>
-      <!-- CERTIFICATION -->
-      <section class="certification-container" id="achievement">
-        <div class="certification-title scroll-animate" data-animation="fadeInDown">
-          <div class="certification-overview">
-            <p>CAREER JOURNEY</p>
+        <div class="proj-c">
+          <div class="proj-vis" style="background:linear-gradient(145deg,#0f172a,#1a2d4a)">
+            <div class="proj-pat"></div>
+            <span class="proj-lbl">SIMAP Trans</span>
           </div>
-          <h1>
-            Professional <span style="color: var(--main)">Achievement's</span>
-          </h1>
-          <p>
-            A curated chronichle of techinical certification, industry
-            recognition, and the millestones that define my journey as a web
-            developer
-          </p>
-        </div>
-        <div class="certification-main-title">
-          <p>Technical Certification</p>
-        </div>
-        <div class="certification-card-container">
-          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0">
-            <i
-              data-feather="award"
-              color="rgb(4, 217, 255)"
-              style="
-                border: 1px solid var(--bg-blur);
-                border-radius: 7px;
-                padding: 7px;
-              "
-              width="40px"
-              height="40px"
-            ></i>
-            <p>Pengembang Web Pertama - Junior Web Developer</p>
-            <figcaption>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis,
-              beatae perferendis ut at eligendi voluptas non tempora accusamus
-              error qui odio eveniet earum impedit dolorum perspiciatis hic
-              maiores, corrupti ducimus!
-            </figcaption>
-            <div class="certification-footer">
-              <span>July 2025</span>
-              <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
-            </div>
-          </div>
-          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.1">
-            <i
-              data-feather="award"
-              color="rgb(4, 217, 255)"
-              style="
-                border: 1px solid var(--bg-blur);
-                border-radius: 7px;
-                padding: 7px;
-              "
-              width="40px"
-              height="40px"
-            ></i>
-            <p>Short Course CreativeArt Lab x Canva Indonesia</p>
-            <figcaption>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis,
-              beatae perferendis ut at eligendi voluptas non tempora accusamus
-              error qui odio eveniet earum impedit dolorum perspiciatis hic
-              maiores, corrupti ducimus!
-            </figcaption>
-            <div class="certification-footer">
-              <span>Dec 2025</span>
-              <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
-            </div>
-          </div>
-          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.2">
-            <i
-              data-feather="award"
-              color="rgb(4, 217, 255)"
-              style="
-                border: 1px solid var(--bg-blur);
-                border-radius: 7px;
-                padding: 7px;
-              "
-              width="40px"
-              height="40px"
-            ></i>
-            <p>CCNA : Introduction to Network</p>
-            <figcaption>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis,
-              beatae perferendis ut at eligendi voluptas non tempora accusamus
-              error qui odio eveniet earum impedit dolorum perspiciatis hic
-              maiores, corrupti ducimus!
-            </figcaption>
-            <div class="certification-footer">
-              <span>July 2025</span>
-              <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
-            </div>
-          </div>
-          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.3">
-            <i
-              data-feather="award"
-              color="rgb(4, 217, 255)"
-              style="
-                border: 1px solid var(--bg-blur);
-                border-radius: 7px;
-                padding: 7px;
-              "
-              width="40px"
-              height="40px"
-            ></i>
-            <p>MTCNA</p>
-            <figcaption>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis,
-              beatae perferendis ut at eligendi voluptas non tempora accusamus
-              error qui odio eveniet earum impedit dolorum perspiciatis hic
-              maiores, corrupti ducimus!
-            </figcaption>
-            <div class="certification-footer">
-              <span>Jun 2026</span>
-              <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
-            </div>
-          </div>
-          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.4">
-            <i
-              data-feather="award"
-              color="rgb(4, 217, 255)"
-              style="
-                border: 1px solid var(--bg-blur);
-                border-radius: 7px;
-                padding: 7px;
-              "
-              width="40px"
-              height="40px"
-            ></i>
-            <p>Certificate of Event Class NgabuburIT</p>
-            <figcaption>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis,
-              beatae perferendis ut at eligendi voluptas non tempora accusamus
-              error qui odio eveniet earum impedit dolorum perspiciatis hic
-              maiores, corrupti ducimus!
-            </figcaption>
-            <div class="certification-footer">
-              <span>Mar 2025</span>
-              <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
-            </div>
-          </div>
-          <div class="certification-card scroll-animate" data-animation="bounceIn" data-stagger="0.5">
-            <i
-              data-feather="award"
-              color="rgb(4, 217, 255)"
-              style="
-                border: 1px solid var(--bg-blur);
-                border-radius: 7px;
-                padding: 7px;
-              "
-              width="40px"
-              height="40px"
-            ></i>
-            <p>Operating System Basics (Windows & Linux)</p>
-            <figcaption>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis,
-              beatae perferendis ut at eligendi voluptas non tempora accusamus
-              error qui odio eveniet earum impedit dolorum perspiciatis hic
-              maiores, corrupti ducimus!
-            </figcaption>
-            <div class="certification-footer">
-              <span>July 2025</span>
-              <a href="">CREDENTIALS<i data-feather="external-link"></i></a>
+          <div class="proj-b">
+            <div class="proj-stk"><span>.NET Framework</span><span>C#</span><span>MySQL</span></div>
+            <h3>SIMAP Trans</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur ratione architecto animi?</p>
+            <div class="proj-acts">
+              <a href="#"><i data-feather="github" width="14" height="14"></i> GitHub</a>
+              <a href="#" class="act-lv">Live Demo <i data-feather="arrow-up-right" width="14" height="14"></i></a>
             </div>
           </div>
         </div>
-      </section>
-      <!-- CONTACT -->
-      <section class="contact-container" id="contact">
-        <div class="contact-title scroll-animate" data-animation="fadeInDown">
-          <h1>
-            Let's Get in Touch <span style="color: var(--main)">with Me</span>
-          </h1>
-          <p>
-            Currently open to new opportunities and collaborations. Whether you
-            have a question or just want to say hi, my inbox is always open.
-          </p>
-        </div>
-        <div class="contact-content-container">
-          <div class="contact-content scroll-animate" data-animation="fadeInLeft">
-            <p>Send a Message</p>
-            <div class="contact-input-container">
-              <div class="contact-input">
-                <label>FULL NAME</label>
-                <input type="text" placeholder="Fareza Maulana Aqilla Putra" />
-              </div>
-              <div class="contact-input">
-                <label>EMAIL ADDRESS</label>
-                <input type="text" placeholder="mewing@gmail.com" />
-              </div>
-              <div class="contact-input" style="width: 100%">
-                <label>MESSAGE</label>
-                <input type="text" style="height: 150px" />
-              </div>
-            </div>
-            <div class="contact-button">
-              <a href="">Send Message</a>
-            </div>
+        <div class="proj-c">
+          <div class="proj-vis" style="background:linear-gradient(145deg,#1a0a0a,#3a1515)">
+            <div class="proj-pat"></div>
+            <span class="proj-lbl">Onei Esports</span>
           </div>
-          <div class="contact-hero scroll-animate" data-animation="fadeInRight">
-            <div class="contact-hero-content">
-              <div class="contact-hero-title">
-                <div class="circle"></div>
-                <p>Available For Work</p>
-              </div>
-              <div class="contact-hero-text">
-                <p>
-                  Based on Cilacap, Indonesia. Flexible for work, IT oriented
-                  projects, and Teamwork.
-                </p>
-              </div>
-            </div>
-            <div class="contact-footer-container">
-              <div class="contact-footer-content">
-                <i data-feather="at-sign"></i>
-                <p>EMAIL</p>
-              </div>
-              <div class="contact-footer-content">
-                <i data-feather="github"></i>
-                <p>GITHUB</p>
-              </div>
-              <div class="contact-footer-content">
-                <i data-feather="linkedin"></i>
-                <p>LINKEDIN</p>
-              </div>
-              <div class="contact-footer-content">
-                <i data-feather="instagram"></i>
-                <p>INSTAGRAM</p>
-              </div>
-            </div>
-            <div
-              class="contact-hero-content"
-              style="
-                height: 150px;
-                display: flex;
-                justify-content: end;
-                background: url('images/computer-program-coding-screen.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                padding: 15px !important;
-                background-position: top;
-              "
-            >
-              <p
-                style="
-                  font-family:
-                    Finlandica Headline,
-                    sans-serif;
-                  color: var(--white);
-                  font-size: 1.2rem;
-                  letter-spacing: 1.5px;
-                  background-color: black;
-                  width: fit-content;
-                  padding: 5px !important;
-                  border-radius: 7px;
-                "
-              >
-                System.initialize("Fareza")
-              </p>
+          <div class="proj-b">
+            <div class="proj-stk"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+            <h3>Onei Esports</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur ratione architecto animi?</p>
+            <div class="proj-acts">
+              <a href="#"><i data-feather="github" width="14" height="14"></i> GitHub</a>
+              <a href="#" class="act-lv">Live Demo <i data-feather="arrow-up-right" width="14" height="14"></i></a>
             </div>
           </div>
         </div>
-      </section>
-      <section class="footer scroll-animate" data-animation="fadeInUp" style="color: var(--white)">
-        <div class="copyright">
-          <p>&copy; 2026 PORTFOLIO FAREZA, BUILT WITH PRECISION</p>
+        <div class="proj-c">
+          <div class="proj-vis" style="background:linear-gradient(145deg,#0a1a14,#0d3d28)">
+            <div class="proj-pat"></div>
+            <span class="proj-lbl">Manajemen Warung</span>
+          </div>
+          <div class="proj-b">
+            <div class="proj-stk"><span>HTML5</span><span>Tailwind CSS</span><span>CodeIgniter 4</span></div>
+            <h3>Manajemen Warung</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur ratione architecto animi?</p>
+            <div class="proj-acts">
+              <a href="#"><i data-feather="github" width="14" height="14"></i> GitHub</a>
+              <a href="#" class="act-lv">Live Demo <i data-feather="arrow-up-right" width="14" height="14"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="link">
-          <a href="">GITHUB</a>
-          <a href="">LINKEDIN</a>
-          <a href="">INSTAGRAM</a>
-          <a href="">FACEBOOK</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>Skills</p>
+      </div>
+      <h2 class="sec-t">Mastering the <span>Digital Craft</span></h2>
+      <p class="sec-d">A curated selection of technologies and methodologies I've mastered to build high-performance, scalable, and beautiful digital experiences.</p>
+      <div class="sk-g">
+        <div class="sk-c">
+          <div class="sk-h"><i data-feather="codesandbox"></i><h3>Frontend</h3></div>
+          <div class="sk-bars">
+            <div><div class="sk-m"><span>HTML</span><span>95%</span></div><div class="sk-bar"><div class="sk-f" data-p="95"></div></div></div>
+            <div><div class="sk-m"><span>CSS</span><span>80%</span></div><div class="sk-bar"><div class="sk-f" data-p="80"></div></div></div>
+            <div><div class="sk-m"><span>JavaScript</span><span>75%</span></div><div class="sk-bar"><div class="sk-f" data-p="75"></div></div></div>
+            <div><div class="sk-m"><span>PHP Native</span><span>85%</span></div><div class="sk-bar"><div class="sk-f" data-p="85"></div></div></div>
+            <div><div class="sk-m"><span>.NET C#</span><span>50%</span></div><div class="sk-bar"><div class="sk-f" data-p="50"></div></div></div>
+            <div><div class="sk-m"><span>Bootstrap</span><span>50%</span></div><div class="sk-bar"><div class="sk-f" data-p="50"></div></div></div>
+            <div><div class="sk-m"><span>Tailwind</span><span>50%</span></div><div class="sk-bar"><div class="sk-f" data-p="50"></div></div></div>
+          </div>
         </div>
-      </section>
-    </header>
-    <script>
-      feather.replace();
-    </script>
-    <script src="script.js"></script>
-  </body>
+        <div class="sk-c">
+          <div class="sk-h"><i data-feather="tool"></i><h3>Tools</h3></div>
+          <div class="sk-tags">
+            <span>VS Code</span><span>Visual Studio</span><span>Git/Github</span>
+            <span>Figma</span><span>Packet Tracer</span><span>Winbox</span>
+            <span>Linux</span><span>Draw io</span><span>Ms. Excel</span>
+          </div>
+        </div>
+        <div class="sk-c">
+          <div class="sk-h"><i data-feather="settings"></i><h3>Backend</h3></div>
+          <div class="sk-r"><span>Laravel 11/12</span><span class="sk-l">Intermediate</span></div>
+          <div class="sk-r"><span>CodeIgniter 4</span><span class="sk-l">Intermediate</span></div>
+          <div class="sk-r"><span>MySQL</span><span class="sk-l">Intermediate</span></div>
+        </div>
+        <div class="sk-c">
+          <div class="sk-h"><i data-feather="cpu"></i><h3>Methodologies</h3></div>
+          <p class="sk-n">I prioritize maintainable code and user-centric designs.</p>
+          <div class="sk-chk">
+            <span><i data-feather="check-circle" width="14" height="14"></i> Waterfall</span>
+            <span><i data-feather="check-circle" width="14" height="14"></i> Spiral</span>
+            <span><i data-feather="check-circle" width="14" height="14"></i> Extreme Programming</span>
+            <span><i data-feather="check-circle" width="14" height="14"></i> Prototype</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="device">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>Device</p>
+      </div>
+      <h2 class="sec-t">Laptop <span>Spec</span></h2>
+      <div class="dv-w">
+        <div class="dv-m">
+          <div class="dv-img"><img src="images/pngwing.com.png" alt="" /></div>
+          <div class="dv-sp">
+            <div class="dv-r"><span>Brand</span><span><img src="images/pngwing.com%20(1).png" alt="" /></span></div>
+            <div class="dv-r"><span>Type</span><span>Lenovo Ideapad 330i</span></div>
+            <div class="dv-r"><span>CPU</span><span>Intel Celeron N4000 @1.10GHZ</span></div>
+            <div class="dv-r"><span>RAM</span><span>4GB DDR4 2400MHZ</span></div>
+            <div class="dv-r"><span>Storage</span><span>SSD 256GB + HDD 500GB</span></div>
+            <div class="dv-r"><span>OS</span><span>Windows 10 Home</span></div>
+          </div>
+        </div>
+        <div class="dv-peri">
+          <div class="peri-c">
+            <div class="peri-h"><img src="images/keyboard.png" alt="" /><h3>Keyboard</h3></div>
+            <div class="peri-b"><img src="images/nyk.png" alt="" /><p>NYK Nemesis Helens 60% RGB</p></div>
+          </div>
+          <div class="peri-c">
+            <div class="peri-h"><img src="images/mouse.png" alt="" /><h3>Mouse</h3></div>
+            <div class="peri-b"><img src="images/olike.png" alt="" /><p>2.4G Wireless Optical Mouse</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>Education</p>
+      </div>
+      <h2 class="sec-t">Education &amp; <span>Growth</span></h2>
+      <p class="sec-d">A chronological timeline of my formal education and the continuous learning path that shapes my technical foundation.</p>
+      <div class="ed-w">
+        <div class="ed-top">
+          <img src="images/graduation-hat.png" width="36" height="36" alt="" />
+          <h3>Formal Education</h3>
+        </div>
+        <div class="ed-tl">
+          <div class="ed-n">
+            <div class="ed-d"></div>
+            <div class="ed-c">
+              <div class="ed-ct"><h4>Politeknik Negeri Cilacap</h4><span class="ed-y">2024 &mdash; Present</span></div>
+              <p class="ed-m">Informatics Engineering</p>
+              <div class="ed-ts"><span>GPA: 3.72/4.00</span><span>Frontend Developer</span></div>
+            </div>
+          </div>
+          <div class="ed-n">
+            <div class="ed-d"></div>
+            <div class="ed-c">
+              <div class="ed-ct"><h4>SMA Negeri 1 Cilacap</h4><span class="ed-y">2021 &mdash; 2024</span></div>
+              <p class="ed-m">Social Science</p>
+              <div class="ed-ts"><span>GPA: 92.5/100</span><span>Social Student</span></div>
+            </div>
+          </div>
+          <div class="ed-n">
+            <div class="ed-d"></div>
+            <div class="ed-c">
+              <div class="ed-ct"><h4>SMP Negeri 1 Cilacap</h4><span class="ed-y">2018 &mdash; 2021</span></div>
+              <p class="ed-m">Regular Class</p>
+              <div class="ed-ts"><span>GPA: 88/100</span><span>Social &amp; Science</span></div>
+            </div>
+          </div>
+          <div class="ed-n">
+            <div class="ed-d"></div>
+            <div class="ed-c">
+              <div class="ed-ct"><h4>SD Al-Irsyad 01 Cilacap</h4><span class="ed-y">2012 &mdash; 2018</span></div>
+              <p class="ed-m">Tematik Class</p>
+              <div class="ed-ts"><span>GPA: 100/100</span><span>Tematik Student</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievement">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>Awards</p>
+      </div>
+      <h2 class="sec-t">Professional <span>Achievements</span></h2>
+      <p class="sec-d">A curated chronicle of technical certifications, industry recognition, and the milestones that define my journey as a web developer.</p>
+      <h3 class="aw-sub">Technical Certification</h3>
+      <div class="aw-g">
+        <div class="aw-c">
+          <i data-feather="award" width="36" height="36"></i>
+          <h4>Junior Web Developer</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, beatae perferendis ut at eligendi.</p>
+          <div class="aw-f"><span>July 2025</span><a href="#">CREDENTIALS <i data-feather="external-link" width="12" height="12"></i></a></div>
+        </div>
+        <div class="aw-c">
+          <i data-feather="award" width="36" height="36"></i>
+          <h4>CreativeArt Lab x Canva</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, beatae perferendis ut at eligendi.</p>
+          <div class="aw-f"><span>Dec 2025</span><a href="#">CREDENTIALS <i data-feather="external-link" width="12" height="12"></i></a></div>
+        </div>
+        <div class="aw-c">
+          <i data-feather="award" width="36" height="36"></i>
+          <h4>CCNA: Intro to Network</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, beatae perferendis ut at eligendi.</p>
+          <div class="aw-f"><span>July 2025</span><a href="#">CREDENTIALS <i data-feather="external-link" width="12" height="12"></i></a></div>
+        </div>
+        <div class="aw-c">
+          <i data-feather="award" width="36" height="36"></i>
+          <h4>MTCNA</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, beatae perferendis ut at eligendi.</p>
+          <div class="aw-f"><span>Jun 2026</span><a href="#">CREDENTIALS <i data-feather="external-link" width="12" height="12"></i></a></div>
+        </div>
+        <div class="aw-c">
+          <i data-feather="award" width="36" height="36"></i>
+          <h4>NgabuburIT Event</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, beatae perferendis ut at eligendi.</p>
+          <div class="aw-f"><span>Mar 2025</span><a href="#">CREDENTIALS <i data-feather="external-link" width="12" height="12"></i></a></div>
+        </div>
+        <div class="aw-c">
+          <i data-feather="award" width="36" height="36"></i>
+          <h4>OS Basics (Win &amp; Linux)</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, beatae perferendis ut at eligendi.</p>
+          <div class="aw-f"><span>July 2025</span><a href="#">CREDENTIALS <i data-feather="external-link" width="12" height="12"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-line"></span>
+        <p>Contact</p>
+      </div>
+      <h2 class="sec-t">Let's Get in <span>Touch</span></h2>
+      <p class="sec-d">Currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, my inbox is always open.</p>
+      <div class="ct-g">
+        <div class="ct-f">
+          <h3>Send a Message</h3>
+          <label>FULL NAME <input type="text" placeholder="Fareza Maulana" /></label>
+          <label>EMAIL <input type="email" placeholder="hello@fareza.dev" /></label>
+          <label>MESSAGE <textarea rows="4" placeholder="Your message..."></textarea></label>
+          <button class="btn btn-p">Send Message</button>
+        </div>
+        <div class="ct-s">
+          <div class="ct-crd">
+            <span class="pill-stat"><span class="dot"></span> Available For Work</span>
+            <p>Based in Cilacap, Indonesia. Flexible for work, IT oriented projects, and Teamwork.</p>
+          </div>
+          <div class="ct-soc">
+            <a href="#"><i data-feather="at-sign"></i><span>EMAIL</span></a>
+            <a href="#"><i data-feather="github"></i><span>GITHUB</span></a>
+            <a href="#"><i data-feather="linkedin"></i><span>LINKEDIN</span></a>
+            <a href="#"><i data-feather="instagram"></i><span>INSTAGRAM</span></a>
+          </div>
+          <div class="ct-quote">
+            <p>System.initialize("Fareza")</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="container ft-in">
+      <p>&copy; 2026 FARREZA &mdash; Built with <span>precision</span></p>
+      <div class="ft-lk">
+        <a href="#">GITHUB</a>
+        <a href="#">LINKEDIN</a>
+        <a href="#">INSTAGRAM</a>
+        <a href="#">FACEBOOK</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="bt" id="bt"><i data-feather="arrow-up"></i></a>
+
+  <script>feather.replace()</script>
+  <script src="script.js"></script>
+</body>
 </html>
