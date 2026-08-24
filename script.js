@@ -7,7 +7,11 @@ if(t){
 
 var h=document.querySelector('.hamburger'),m=document.querySelector('.mob-overlay')
 function cl(){h&&h.classList.remove('active');m&&m.classList.remove('active')}
-if(h&&m){h.addEventListener('click',function(e){e.stopPropagation();h.classList.toggle('active');m.classList.toggle('active')});m.addEventListener('click',function(e){if(e.target===m)cl()});document.querySelectorAll('.mob-lk a').forEach(function(l){l.addEventListener('click',cl)})}
+if(h&&m){
+  h.addEventListener('click',function(e){e.stopPropagation();var open=m.classList.toggle('active');h.classList.toggle('active',open);if(open){var nv=document.getElementById('nav');nv&&nv.classList.remove('hidden')}});
+  document.querySelectorAll('.mob-lk a').forEach(function(l){l.addEventListener('click',cl)});
+  document.addEventListener('click',function(e){if(m.classList.contains('active')&&!m.contains(e.target)&&!h.contains(e.target))cl()})
+}
 
 var ls=0,n=document.getElementById('nav')
 window.addEventListener('scroll',function(){var c=window.scrollY;n.classList.toggle('hidden',c>ls&&c>100);ls=c<=0?0:c},{passive:true})
@@ -27,4 +31,16 @@ document.querySelectorAll('.sk-f').forEach(function(el){so.observe(el)})
 
 var nl=document.querySelectorAll('.nav-lk a'),ss=document.querySelectorAll('section[id]')
 window.addEventListener('scroll',function(){var cur='';ss.forEach(function(s){var t=s.offsetTop-100;if(window.scrollY>=t)cur=s.getAttribute('id')});nl.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+cur)})},{passive:true})
+
+var sb=document.getElementById('cf-send')
+if(sb){
+  sb.addEventListener('click',function(){
+    var nm=document.getElementById('cf-name'),em=document.getElementById('cf-email'),ms=document.getElementById('cf-msg')
+    var n=nm?nm.value.trim():'',e=em?em.value.trim():'',t=ms?ms.value.trim():''
+    if(!n){nm&&nm.focus();return}
+    if(!t){ms&&ms.focus();return}
+    var msg='Hello Fareza,\n\nMy name is '+n+'.'+(e?'\nEmail: '+e:'')+'\n\n'+t+'\n\n---\nSent via portfolio website contact form'
+    window.open('https://wa.me/6285727674000?text='+encodeURIComponent(msg),'_blank')
+  })
+}
 })()
