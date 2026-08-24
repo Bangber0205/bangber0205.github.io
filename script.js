@@ -1,5 +1,13 @@
 (function(){if(window.__pi)return;window.__pi=true
 
+var pl=document.getElementById('preloader')
+if(pl){
+  var pd=false
+  var pf=function(){if(pd)return;pd=true;pl.classList.add('done');setTimeout(function(){pl&&pl.remove()},600)}
+  if(document.readyState==='complete')pf()
+  else{window.addEventListener('load',pf);setTimeout(pf,2500)}
+}
+
 var t=document.querySelector('.theme-tg'),r=document.documentElement
 if(t){
   var u=function(){var e=t.querySelector('i');if(!e||!window.feather)return;e.setAttribute('data-feather',r.getAttribute('data-theme')==='light'?'sun':'moon');feather.replace()}
